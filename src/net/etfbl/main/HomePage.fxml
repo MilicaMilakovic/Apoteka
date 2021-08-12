@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="708.0" prefWidth="1409.0" style="-fx-background-color: #EAEFFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="322.0" fitWidth="1223.0" layoutX="-19.0" layoutY="-9.0" rotate="180.0">
+         <image>
+            <Image url="@../../../resources/Shiny%20Overlay.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="450.0" fitWidth="1217.0" layoutY="314.0">
+         <image>
+            <Image url="@../../../resources/Shiny%20Overlay%20(1).png" />
+         </image>
+      </ImageView>
+      <Rectangle fill="WHITE" height="242.0" layoutX="355.0" layoutY="147.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#cfbebe" spread="0.13" />
+         </effect>
+      </Rectangle>
+      <Rectangle fill="WHITE" height="242.0" layoutX="74.0" layoutY="147.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0">
+         <effect>
+            <DropShadow color="#00000047" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="40.0" fitWidth="54.0" layoutX="1111.0" layoutY="22.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/user.png" />
+         </image>
+         <effect>
+            <DropShadow color="#0000006e" />
+         </effect>
+      </ImageView>
+      <Label layoutX="74.0" layoutY="42.0" text="Dobro dosli, Milice!" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Rectangle fill="WHITE" height="225.0" layoutX="74.0" layoutY="431.0" stroke="TRANSPARENT" strokeType="INSIDE" width="542.0">
+         <effect>
+            <DropShadow color="#00000048" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="531.0" fitWidth="693.0" layoutX="710.0" layoutY="113.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/pharmacist.png" />
+         </image>
+         <effect>
+            <DropShadow color="#7682a3ec" spread="0.09" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="436.0" layoutY="169.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="472.0" layoutY="171.0" text="Recepti">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="483.0" layoutY="268.0" text="10" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="206.0" text="23" textFill="#2b9044">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="436.0" layoutY="273.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="472.0" layoutY="277.0" text="Recepti">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="461.0" layoutY="321.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="167.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/pill.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="200.0" layoutY="170.0" prefHeight="25.0" prefWidth="65.0" text="Lijekovi">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="186.0" layoutY="206.0" text="121" textFill="#013b5f">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="271.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="194.0" layoutY="275.0" text="Recepti">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="183.0" layoutY="319.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
