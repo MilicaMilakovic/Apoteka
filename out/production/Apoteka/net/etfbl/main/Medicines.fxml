@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.MedicinesController">
+<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.MedicinesController">
    <children>
       <ImageView fitHeight="323.0" fitWidth="1253.0" layoutX="-9.0" layoutY="-8.0" rotate="180.0">
          <image>
@@ -20,31 +24,48 @@
             <Image url="@../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutX="14.0" layoutY="141.0" prefHeight="546.0" prefWidth="1141.0">
+      <TableView fx:id="table" layoutX="7.0" layoutY="141.0" prefHeight="546.0" prefWidth="1155.0">
         <columns>
-          <TableColumn prefWidth="56.0" text="id" />
-          <TableColumn prefWidth="94.0" text="Genericki naziv" />
-            <TableColumn prefWidth="108.0" text="Kategorija" />
-            <TableColumn prefWidth="108.0" text="Prodajna cijena" />
-            <TableColumn prefWidth="103.0" text="Nabavna cijena" />
-            <TableColumn prefWidth="114.0" text="Kontraindikacije" />
-            <TableColumn prefWidth="121.0" text="Datum proizvodnje" />
-            <TableColumn prefWidth="93.0" text="Rok upotrebe" />
-            <TableColumn prefWidth="61.0" text="Kolicina" />
-            <TableColumn prefWidth="97.0" text="Dodatni opis" />
-            <TableColumn prefWidth="122.0" text="Farmaceutski oblik" />
-            <TableColumn minWidth="2.0" prefWidth="63.0" text="Jacina " />
+          <TableColumn fx:id="idCol" prefWidth="56.0" text="id" />
+          <TableColumn fx:id="generickiNazivCol" prefWidth="94.0" text="Genericki naziv" />
+            <TableColumn fx:id="kategorijaCol" prefWidth="108.0" text="Kategorija" />
+            <TableColumn fx:id="prodajnaCijenaCol" prefWidth="93.33334350585938" text="Prodajna cijena" />
+            <TableColumn fx:id="nabavnaCijenaCol" prefWidth="95.33331298828125" text="Nabavna cijena" />
+            <TableColumn fx:id="kontraindikacijeCol" prefWidth="127.6666259765625" text="Kontraindikacije" />
+            <TableColumn fx:id="datumProizvodnjeCol" prefWidth="120.33331298828125" text="Datum proizvodnje" />
+            <TableColumn fx:id="rokUpotrebeCol" prefWidth="103.66668701171875" text="Rok upotrebe" />
+            <TableColumn fx:id="kolicinaCol" prefWidth="61.0" text="Kolicina" />
+            <TableColumn fx:id="dodatniOpisCol" prefWidth="97.0" text="Dodatni opis" />
+            <TableColumn fx:id="farmaceutskiOblikCol" prefWidth="115.0" text="Farmaceutski oblik" />
+            <TableColumn fx:id="jacinaCol" minWidth="2.0" prefWidth="84.0" text="Jacina [mg]" />
         </columns>
       </TableView>
-      <Button layoutX="21.0" layoutY="19.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Pregledaj" />
-      <Button layoutX="174.0" layoutY="19.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
-      <TextField layoutX="976.0" layoutY="28.0" prefHeight="37.0" prefWidth="179.0" promptText="pretrazi" style="-fx-background-radius: 100;" />
-      <Button layoutX="324.0" layoutY="19.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
-      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="949.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="7.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 0;" text="PREGLEDAJ" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="161.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
+      <TextField layoutX="962.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="pretrazi" style="-fx-background-radius: 100;" />
+      <Button layoutX="317.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="926.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/search-interface-symbol.png" />
          </image>
       </ImageView>
-      <Button layoutX="21.0" layoutY="76.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Button" />
+      <Button layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#dodajLijek" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 0; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

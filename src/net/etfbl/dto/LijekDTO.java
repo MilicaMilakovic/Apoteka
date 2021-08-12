@@ -143,4 +143,22 @@ public class LijekDTO {
     public int hashCode() {
         return Objects.hash(lijekID);
     }
+
+    @Override
+    public String toString() {
+        return "LijekDTO{" +
+                "lijekID=" + lijekID +
+                ", generickiNaziv='" + generickiNaziv + '\'' +
+                ", kategorija='" + kategorija + '\'' +
+                ", prodajnaCijena=" + prodajnaCijena +
+                ", nabavnaCijena=" + nabavnaCijena +
+                ", kontraindikacije='" + kontraindikacije + '\'' +
+                ", datumProizvodnje='" + datumProizvodnje + '\'' +
+                ", rokUpotrebe='" + rokUpotrebe + '\'' +
+                ", kolicina=" + kolicina +
+                ", dodatniOpis='" + dodatniOpis + '\'' +
+                ", farmaceutskiOblik='" + farmaceutskiOblik + '\'' +
+                ", jacinaLijeka=" + jacinaLijeka +
+                '}';
+    }
 }

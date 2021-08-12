@@ -40,7 +40,7 @@
                   <DropShadow color="#0000006e" />
                </effect>
             </ImageView>
-            <Label layoutX="74.0" layoutY="42.0" text="Dobro dosli, Milice!" textFill="WHITE">
+            <Label layoutX="74.0" layoutY="42.0" text="Dobro došli, Milice!" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
@@ -158,11 +158,11 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="1.0" layoutY="454.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Dobavljaci">
+      <Button layoutX="1.0" layoutY="454.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Dobavljači">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button defaultButton="true" graphicTextGap="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#home" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Pocetna stranica">
+      <Button defaultButton="true" graphicTextGap="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#home" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Početna stranica">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -173,7 +173,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="1.0" layoutY="497.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Proizvodjaci">
+      <Button layoutX="1.0" layoutY="497.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Proizvodjači">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

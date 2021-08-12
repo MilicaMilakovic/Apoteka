@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.AddMedicineController">
+   <children>
+      <TextField layoutX="262.0" layoutY="48.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField layoutX="55.0" layoutY="48.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <DatePicker layoutX="56.0" layoutY="161.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="56.0" layoutY="34.0" text="Genericki naziv" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="34.0" text="Kategorija" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="55.0" layoutY="103.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField layoutX="262.0" layoutY="103.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="55.0" layoutY="86.0" text="Prodajna cijena" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="86.0" text="Nabavna cijena" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="60.0" layoutY="275.0" prefHeight="103.0" prefWidth="183.0" />
+      <DatePicker layoutX="262.0" layoutY="161.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="55.0" layoutY="144.0" text="Datum proizvodnje" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="144.0" text="Rok upotrebe" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="56.0" layoutY="217.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField layoutX="262.0" layoutY="217.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="55.0" layoutY="200.0" text="Kolicina" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="200.0" text="Jacina" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="262.0" layoutY="275.0" prefHeight="103.0" prefWidth="183.0" />
+      <Label layoutX="60.0" layoutY="258.0" text="Dodatni opis" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="262.0" layoutY="258.0" text="Kontraindikacije" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="60.0" layoutY="406.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="60.0" layoutY="389.0" text="Farmaceutski oblik" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="204.0" layoutY="471.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="93.0" text="DODAJ LIJEK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
