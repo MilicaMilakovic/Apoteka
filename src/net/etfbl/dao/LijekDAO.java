@@ -96,11 +96,14 @@ public class LijekDAO {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "INSERT INTO lijek VALUES"+
-                "(?,?,?,?,?,?,?,?,?,?,?) ";
+        String query = "INSERT INTO lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,DodatniOpis,FarmaceutskiOblik,JacinaLijeka) VALUES "+
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
+//            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bp_apoteka?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false"
+//                    , "root", "root");
+
             ps = conn.prepareStatement(query);
             ps.setString(1,lijek.getGenerickiNaziv());
             ps.setString(2,lijek.getKategorija());
@@ -121,6 +124,13 @@ public class LijekDAO {
 
         } finally {
             ConnectionPool.getInstance().checkIn(conn);
+//            if(conn!= null) {
+//                try {
+//                    conn.close();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//            }
 
         }
 
