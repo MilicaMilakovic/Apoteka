@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -7,12 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pane" prefHeight="708.0" prefWidth="1409.0" style="-fx-background-color: #EAEFFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.HomePageController">
    <children>
-      <ImageView fitHeight="322.0" fitWidth="1223.0" layoutX="-19.0" layoutY="-9.0" rotate="180.0">
+      <ImageView fitHeight="323.0" fitWidth="1241.0" layoutX="-19.0" layoutY="-8.0" rotate="180.0">
          <image>
             <Image url="@../../../resources/Shiny%20Overlay.png" />
          </image>
@@ -22,17 +26,27 @@
             <Image url="@../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
-      <Rectangle fill="WHITE" height="242.0" layoutX="355.0" layoutY="147.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0">
+      <Line endX="742.5" layoutX="20.0" layoutY="313.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#2b9044" />
+                  <Stop color="#84c040" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Rectangle fill="WHITE" height="141.0" layoutX="353.0" layoutY="227.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="266.0">
          <effect>
             <DropShadow blurType="GAUSSIAN" color="#cfbebe" spread="0.13" />
          </effect>
       </Rectangle>
-      <Rectangle fill="WHITE" height="242.0" layoutX="74.0" layoutY="147.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0">
+      <Rectangle fill="WHITE" height="141.0" layoutX="74.0" layoutY="227.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="266.0">
          <effect>
             <DropShadow color="#00000047" />
          </effect>
       </Rectangle>
-      <ImageView fitHeight="40.0" fitWidth="54.0" layoutX="1111.0" layoutY="22.0" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="54.0" layoutX="1076.0" layoutY="26.0" preserveRatio="true">
          <image>
             <Image url="@../../../resources/user.png" />
          </image>
@@ -40,12 +54,15 @@
             <DropShadow color="#0000006e" />
          </effect>
       </ImageView>
-      <Label layoutX="74.0" layoutY="42.0" text="Dobro dosli, Milice!" textFill="WHITE">
+      <Label layoutX="74.0" layoutY="42.0" text="Dobro došli, Milice!" textFill="WHITE">
          <font>
-            <Font size="19.0" />
+            <Font size="22.0" />
          </font>
+         <effect>
+            <DropShadow color="#00000074" />
+         </effect>
       </Label>
-      <Rectangle height="250.0" layoutX="74.0" layoutY="431.0" rotate="180.0" stroke="TRANSPARENT" strokeType="INSIDE" width="545.0">
+      <Rectangle height="250.0" layoutX="74.0" layoutY="431.0" rotate="180.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-width: 20; -fx-arc-height: 20;" width="545.0">
          <effect>
             <DropShadow color="#00000048" />
          </effect>
@@ -66,90 +83,162 @@
             <DropShadow color="#7682a3ec" spread="0.09" />
          </effect>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="436.0" layoutY="169.0" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/prescription.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="472.0" layoutY="171.0" text="Recepti">
+      <Label layoutX="377.0" layoutY="321.0" text="Recepata">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="483.0" layoutY="268.0" text="10" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="461.0" layoutY="206.0" text="23" textFill="#2b9044">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="436.0" layoutY="273.0" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/prescription.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="472.0" layoutY="277.0" text="Recepti">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="461.0" layoutY="321.0" text="10">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="167.0" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/pill.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="200.0" layoutY="170.0" prefHeight="25.0" prefWidth="65.0" text="Lijekovi">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="medCount" layoutX="186.0" layoutY="206.0" textFill="#013b5f">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="271.0" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/prescription.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="194.0" layoutY="275.0" text="Recepti">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="183.0" layoutY="319.0" text="10">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="81.0" layoutY="454.0">
+      <ButtonBar buttonMinWidth="60.0" layoutX="78.0" layoutY="321.0" prefHeight="25.0" prefWidth="95.0">
+         <buttons>
+            <Label prefHeight="25.0" prefWidth="65.0" text="Lijekova" textFill="#3e4042">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../resources/next.png" />
+               </image>
+            </ImageView>
+         </buttons>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ButtonBar>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="390.0">
          <image>
             <Image url="@../../../resources/pharmacy-tech.png" />
          </image>
+         <effect>
+            <DropShadow color="#0000007c" />
+         </effect>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="304.0" layoutY="473.0" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="221.0" layoutY="466.0" preserveRatio="true">
          <image>
             <Image url="@../../../resources/prescription.png" />
          </image>
       </ImageView>
-      <Label layoutX="340.0" layoutY="477.0" text="Zaposleni">
+      <Label layoutX="257.0" layoutY="470.0" text="Zaposleni">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="340.0" layoutY="518.0" text="10">
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="409.0" layoutY="466.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="445.0" layoutY="470.0" text="Zaposleni">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="511.0" text="10">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="221.0" layoutY="572.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="257.0" layoutY="576.0" text="Zaposleni">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="617.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="409.0" layoutY="572.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="445.0" layoutY="576.0" text="Zaposleni">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="445.0" layoutY="617.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="username" layoutX="1079.0" layoutY="74.0" text="milica" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Circle fill="#f2f2f2" layoutX="121.0" layoutY="264.0" radius="27.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="medCount" layoutX="106.0" layoutY="250.0" text="111">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#013b5f" />
+                  <Stop color="#2b9044" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <DropShadow color="#00000041" />
+         </effect>
+      </Label>
+      <Label layoutX="252.0" layoutY="496.0" text="11">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#013b5f" />
+                  <Stop color="#2b9044" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Circle fill="#f2f2f2" layoutX="232.0" layoutY="276.0" radius="52.0" stroke="WHITE" strokeType="INSIDE">
+         <effect>
+            <DropShadow color="#00000059" />
+         </effect>
+      </Circle>
+      <ImageView fitHeight="166.0" fitWidth="171.0" layoutX="180.0" layoutY="168.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/Remedy-rafiki.png" />
+         </image>
+      </ImageView>
+      <Circle fill="#f2f2f2" layoutX="514.0" layoutY="276.0" radius="52.0" stroke="WHITE" strokeType="INSIDE">
+         <effect>
+            <DropShadow color="#00000059" />
+         </effect>
+      </Circle>
+      <ImageView fitHeight="166.0" fitWidth="171.0" layoutX="462.0" layoutY="168.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/Pharmacist-rafiki.png" />
+         </image>
+      </ImageView>
+      <Circle fill="#f2f2f2" layoutX="391.0" layoutY="269.0" radius="27.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label layoutX="376.0" layoutY="255.0" text="111">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#013b5f" />
+                  <Stop color="#2b9044" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <DropShadow color="#00000041" />
+         </effect>
+      </Label>
+      <Label layoutX="1023.0" layoutY="662.0" text="Baze podataka 2021" textFill="#a3aad3" />
    </children>
 </AnchorPane>

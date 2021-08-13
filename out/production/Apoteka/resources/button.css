@@ -4,6 +4,8 @@
 .button:hover{
 	-fx-border-color:#2B9044;
 	-fx-border-width: 0 0 0 5;
+	-fx-text-fill: linear-gradient(to right,#013b5f,#2b9044);
+	-fx-font-weight: bold;
 }
 .button:pressed{
 	-fx-border-color:#013B5F;

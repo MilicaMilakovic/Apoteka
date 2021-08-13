@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import net.etfbl.dao.ZaposleniDAO;
@@ -35,6 +36,9 @@ public class UsersController implements Initializable {
     public TableColumn<ZaposleniDTO,String> datumRodjenjaCol;
     @FXML
     public TableColumn<ZaposleniDTO,Double> plataCol;
+
+    @FXML
+    public TextField searchField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -89,5 +93,13 @@ public class UsersController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void search(){
+        String name = searchField.getText();
+        ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
+
+        table.setItems(FXCollections.observableArrayList(zaposleniDAO.pretragaPoImenu(name)));
+
     }
 }

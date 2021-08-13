@@ -39,7 +39,7 @@ public class LoginController {
         ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
 
         if(zaposleniDAO.logIn(username,password)) {
-
+            HomePageController.name=username;
             Stage primaryStage = new Stage();
             Parent root = null;
             try {

@@ -14,9 +14,11 @@ public class MainPageController implements Initializable {
 
     @FXML
     public AnchorPane pane;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Parent root = null;
+
         try {
 
             root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
