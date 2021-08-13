@@ -3,10 +3,7 @@ package net.etfbl.dao;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class ZaposleniDAO {
@@ -127,6 +124,44 @@ public class ZaposleniDAO {
         return  retVal;
     }
 
+    public boolean azuriraj(ZaposleniDTO zaposleni){
+        boolean retVal = false;
 
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        String query = "UPDATE zaposleni SET "
+                +"JMB=?,"
+                +"Ime=?,"
+                +"Prezime=?,"
+                +"KorisnickoIme=?,"
+                +"Lozinka=?,"
+                +"DatumRodjenja=?,"
+                +"Plata=?"
+                +"WHERE ZaposleniID=?";
+
+        try{
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+
+            ps.setString(1,zaposleni.getJMB());
+            ps.setString(2,zaposleni.getIme());
+            ps.setString(3,zaposleni.getPrezime());
+            ps.setString(4,zaposleni.getKorisnickoIme());
+            ps.setString(5,zaposleni.getLozinka());
+            ps.setDate(6, Date.valueOf(zaposleni.getDatumRodjenja()));
+            ps.setBigDecimal(7,BigDecimal.valueOf(zaposleni.getPlata()));
+            ps.setInt(8,zaposleni.getId());
+
+            retVal = ps.executeUpdate() == 1;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return  retVal;
+    }
 
 }

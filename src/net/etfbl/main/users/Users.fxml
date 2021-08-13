@@ -65,7 +65,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button graphicTextGap="10.0" layoutX="172.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: #8b8c89;" text="IZMIJENI" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="172.0" layoutY="20.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: #8b8c89;" text="IZMIJENI" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -101,12 +101,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po imenu" style="-fx-background-radius: 100;">
+      <TextField layoutX="878.0" layoutY="30.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po imenu" style="-fx-background-radius: 100;">
          <effect>
             <DropShadow color="#b0a4d066" />
          </effect>
       </TextField>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="1116.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="1090.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../resources/loupe.png" />
          </image>

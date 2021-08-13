@@ -76,4 +76,18 @@ public class UsersController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void update(){
+        Stage primaryStage = new Stage();
+        Parent root = null;
+        UpdateUserController.userToUpdate = table.getSelectionModel().getSelectedItem();
+        try {
+            root = FXMLLoader.load(getClass().getResource("UpdateUser.fxml"));
+            primaryStage.setTitle("Izmjena naloga zaposlenog");
+            primaryStage.setScene(new Scene(root, 500  , 550));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
