@@ -74,7 +74,7 @@
          <effect>
             <DropShadow color="#00000066" />
          </effect></Button>
-      <TextField layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po nazivu" style="-fx-background-radius: 100;">
+      <TextField fx:id="searchField" layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po nazivu" style="-fx-background-radius: 100;">
          <effect>
             <DropShadow color="#b0a4d066" />
          </effect></TextField>
@@ -110,21 +110,23 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="1115.0" layoutY="30.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="55.0" style="-fx-background-radius: 120; -fx-background-color: transparent;">
+      <Button layoutX="1104.0" layoutY="30.0" mnemonicParsing="false" onAction="#search" prefHeight="37.0" prefWidth="55.0" style="-fx-background-radius: 120; -fx-background-color: transparent;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
             <DropShadow color="#b0a4d066" />
          </effect>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/loupe.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
       </Button>
-      <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="1116.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../resources/loupe.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
    </children>
 </AnchorPane>

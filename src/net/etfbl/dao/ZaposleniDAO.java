@@ -193,4 +193,30 @@ public class ZaposleniDAO {
         return  retVal;
 
     }
+
+    public int count(){
+
+        int retVal = 0;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String query = "SELECT COUNT(*) FROM zaposleni";
+
+        try{
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+
+            rs.next();
+            retVal = rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return retVal;
+    }
 }

@@ -17,26 +17,20 @@ public class UpdateUserController implements Initializable {
 
     @FXML
     private TextField jmbField;
-
     @FXML
     private TextField imeField;
-
     @FXML
     private TextField prezimeField;
-
     @FXML
     private TextField korImeField;
-
     @FXML
     private PasswordField lozinkaField;
     @FXML
     private TextField lozinkaUnmasked;
     @FXML
     private CheckBox showPass;
-
     @FXML
     private DatePicker datumRodjenjaField;
-
     @FXML
     private TextField plataField;
     @FXML

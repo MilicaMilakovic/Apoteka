@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import net.etfbl.dao.LijekDAO;
@@ -47,7 +48,8 @@ public class MedicinesController implements Initializable {
     @FXML
     public TableColumn<LijekDTO, Double> jacinaCol;
 
-
+    @FXML
+    public TextField searchField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -112,5 +114,12 @@ public class MedicinesController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void search(){
+        String naziv = searchField.getText();
+        LijekDAO lijekDAO = new LijekDAO();
+
+        table.setItems(FXCollections.observableArrayList(lijekDAO.pretragaPoNazivu(naziv)));
     }
 }

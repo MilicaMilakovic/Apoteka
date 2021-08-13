@@ -1,6 +1,8 @@
 package net.etfbl.main.users;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -24,6 +26,10 @@ public class AddUserController {
     public TextField korImeField;
     @FXML
     public PasswordField lozinkaField;
+    @FXML
+    private TextField lozinkaUnmasked;
+    @FXML
+    private CheckBox showPass;
     @FXML
     public TextField plataField;
     @FXML
@@ -51,4 +57,18 @@ public class AddUserController {
         korImeField.clear();
     }
 
+    @FXML
+    public void togglevisiblePassword(ActionEvent event) {
+        if (showPass.isSelected()) {
+            String pass = lozinkaField.getText();
+            lozinkaUnmasked.setText(pass);
+            lozinkaField.setVisible(false);
+            lozinkaUnmasked.setVisible(true);
+            return;
+        }
+        lozinkaUnmasked.setVisible(false);
+        lozinkaField.setVisible(true);
+        lozinkaField.setText(lozinkaUnmasked.getText());
+
+    }
 }

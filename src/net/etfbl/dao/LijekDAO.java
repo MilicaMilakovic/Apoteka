@@ -235,4 +235,37 @@ public class LijekDAO {
 
         return retVal;
     }
+
+    public ArrayList<LijekDTO> pretragaPoNazivu(String naziv){
+        ArrayList<LijekDTO> retVal = new ArrayList<>();
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String query = "SELECT * FROM lijek WHERE GenerickiNaziv like " + "'%"+naziv+"%'";
+
+        try{
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+
+            rs = ps.executeQuery();
+
+            while(rs.next()){
+                retVal.add( new LijekDTO(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getBigDecimal(4).doubleValue(),
+                        rs.getBigDecimal(5).doubleValue(),rs.getString(6),
+                        rs.getDate(7).toString(), rs.getDate(8).toString(),
+                        rs.getBigDecimal(9).doubleValue(), rs.getString(10),
+                        rs.getString(11),rs.getBigDecimal(12).doubleValue()));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return retVal;
+    }
 }
