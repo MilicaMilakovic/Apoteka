@@ -24,33 +24,78 @@
             <Image url="@../../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutX="7.0" layoutY="141.0" prefHeight="546.0" prefWidth="1155.0">
+      <TableView fx:id="table" layoutX="17.0" layoutY="141.0" prefHeight="546.0" prefWidth="1131.0">
         <columns>
-          <TableColumn fx:id="idCol" prefWidth="56.0" text="id" />
-          <TableColumn fx:id="generickiNazivCol" prefWidth="94.0" text="Genericki naziv" />
-            <TableColumn fx:id="kategorijaCol" prefWidth="108.0" text="Kategorija" />
-            <TableColumn fx:id="prodajnaCijenaCol" prefWidth="93.33334350585938" text="Prodajna cijena" />
-            <TableColumn fx:id="nabavnaCijenaCol" prefWidth="95.33331298828125" text="Nabavna cijena" />
-            <TableColumn fx:id="kontraindikacijeCol" prefWidth="127.6666259765625" text="Kontraindikacije" />
-            <TableColumn fx:id="datumProizvodnjeCol" prefWidth="120.33331298828125" text="Datum proizvodnje" />
-            <TableColumn fx:id="rokUpotrebeCol" prefWidth="103.66668701171875" text="Rok upotrebe" />
-            <TableColumn fx:id="kolicinaCol" prefWidth="61.0" text="Kolicina" />
-            <TableColumn fx:id="dodatniOpisCol" prefWidth="97.0" text="Dodatni opis" />
-            <TableColumn fx:id="farmaceutskiOblikCol" prefWidth="115.0" text="Farmaceutski oblik" />
-            <TableColumn fx:id="jacinaCol" minWidth="2.0" prefWidth="84.0" text="Jacina [mg]" />
+          <TableColumn fx:id="idCol" prefWidth="38.0" text="id" />
+          <TableColumn fx:id="generickiNazivCol" prefWidth="103.0" text="Genericki naziv" />
+            <TableColumn fx:id="kategorijaCol" prefWidth="93.0" text="Kategorija" />
+            <TableColumn fx:id="prodajnaCijenaCol" prefWidth="109.0" text="Prodajna cijena" />
+            <TableColumn fx:id="nabavnaCijenaCol" prefWidth="105.0" text="Nabavna cijena" />
+            <TableColumn fx:id="kontraindikacijeCol" prefWidth="103.0" text="Kontraindikacije" />
+            <TableColumn fx:id="datumProizvodnjeCol" prefWidth="117.0" text="Datum proizvodnje" />
+            <TableColumn fx:id="rokUpotrebeCol" prefWidth="96.0" text="Rok upotrebe" />
+            <TableColumn fx:id="kolicinaCol" prefWidth="67.0" text="Kolicina" />
+            <TableColumn fx:id="dodatniOpisCol" prefWidth="93.0" text="Dodatni opis" />
+            <TableColumn fx:id="farmaceutskiOblikCol" prefWidth="116.0" text="Farmaceutski oblik" />
+            <TableColumn fx:id="jacinaCol" minWidth="2.0" prefWidth="90.0" text="Jacina [mg]" />
         </columns>
       </TableView>
-      <Button layoutX="7.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 0;" text="PREGLEDAJ" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="17.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font></Button>
-      <Button layoutX="161.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateMedicine" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#00000064" />
+         </effect>
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/view.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button graphicTextGap="10.0" layoutX="172.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: #8b8c89;" text="IZMIJENI" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/edit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#00000066" />
+         </effect></Button>
       <TextField layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po nazivu" style="-fx-background-radius: 100;">
          <effect>
             <DropShadow color="#b0a4d066" />
          </effect></TextField>
-      <Button layoutX="317.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteMedicine" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
-      <Button layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 0; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="326.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: #D9534F;" text="OBRIŠI" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/trash.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#00000066" />
+         </effect></Button>
+      <Button layoutX="17.0" layoutY="77.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1375.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.MainPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1375.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.MainPageController">
    <children>
       <AnchorPane fx:id="pane" layoutX="201.0" prefHeight="708.0" prefWidth="1409.0" style="-fx-background-color: #EAEFFB;">
          <children>
@@ -182,7 +182,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Label layoutX="67.0" layoutY="122.0" text="Apoteka b22" />
-      <Button layoutY="540.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
+      <Button layoutY="540.0" mnemonicParsing="false" onAction="#users" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

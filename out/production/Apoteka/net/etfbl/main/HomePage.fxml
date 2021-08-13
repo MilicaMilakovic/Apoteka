@@ -5,10 +5,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="708.0" prefWidth="1409.0" style="-fx-background-color: #EAEFFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="pane" prefHeight="708.0" prefWidth="1409.0" style="-fx-background-color: #EAEFFB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.HomePageController">
    <children>
       <ImageView fitHeight="322.0" fitWidth="1223.0" layoutX="-19.0" layoutY="-9.0" rotate="180.0">
          <image>
@@ -43,10 +45,18 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Rectangle fill="WHITE" height="225.0" layoutX="74.0" layoutY="431.0" stroke="TRANSPARENT" strokeType="INSIDE" width="542.0">
+      <Rectangle height="250.0" layoutX="74.0" layoutY="431.0" rotate="180.0" stroke="TRANSPARENT" strokeType="INSIDE" width="545.0">
          <effect>
             <DropShadow color="#00000048" />
          </effect>
+         <fill>
+            <LinearGradient endX="0.8333333333333334" endY="0.5142857142857142" startY="0.9714285714285714">
+               <stops>
+                  <Stop color="#0e6f9c62" />
+                  <Stop color="#eaeffb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
       </Rectangle>
       <ImageView fitHeight="531.0" fitWidth="693.0" layoutX="710.0" layoutY="113.0" preserveRatio="true">
          <image>
@@ -101,7 +111,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="186.0" layoutY="206.0" text="121" textFill="#013b5f">
+      <Label fx:id="medCount" layoutX="186.0" layoutY="206.0" textFill="#013b5f">
          <font>
             <Font size="30.0" />
          </font>
@@ -117,6 +127,26 @@
          </font>
       </Label>
       <Label layoutX="183.0" layoutY="319.0" text="10">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="81.0" layoutY="454.0">
+         <image>
+            <Image url="@../../../resources/pharmacy-tech.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="304.0" layoutY="473.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/prescription.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="340.0" layoutY="477.0" text="Zaposleni">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="518.0" text="10">
          <font>
             <Font size="30.0" />
          </font>
