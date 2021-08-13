@@ -13,10 +13,10 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.AddMedicineController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.medicines.AddMedicineController">
    <children>
-      <TextField fx:id="kategorijaField" layoutX="262.0" layoutY="51.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <TextField fx:id="nazivField" layoutX="56.0" layoutY="51.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="kategorijaField" layoutX="262.0" layoutY="51.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <DatePicker fx:id="datumProizvodnjeField" layoutX="56.0" layoutY="161.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <Label layoutX="56.0" layoutY="34.0" text="Genericki naziv" textFill="#6f6f6f">
          <font>
@@ -86,9 +86,9 @@
             <Font name="System Bold" size="12.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="23.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../resources/check-mark.png" />
+                  <Image url="@../../../../resources/check-mark.png" />
                </image>
             </ImageView>
          </graphic>
@@ -108,9 +108,9 @@
             <Font name="System Bold" size="12.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="23.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../resources/error.png" />
+                  <Image url="@../../../../resources/error.png" />
                </image>
             </ImageView>
          </graphic>

@@ -12,16 +12,16 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.MedicinesController">
+<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.medicines.MedicinesController">
    <children>
       <ImageView fitHeight="323.0" fitWidth="1253.0" layoutX="-9.0" layoutY="-8.0" rotate="180.0">
          <image>
-            <Image url="@../../../resources/Shiny%20Overlay.png" />
+            <Image url="@../../../../resources/Shiny%20Overlay.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="420.0" fitWidth="1213.0" layoutX="-5.0" layoutY="314.0">
          <image>
-            <Image url="@../../../resources/Shiny%20Overlay%20(1).png" />
+            <Image url="@../../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
       <TableView fx:id="table" layoutX="7.0" layoutY="141.0" prefHeight="546.0" prefWidth="1155.0">
@@ -44,12 +44,12 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button layoutX="161.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
+      <Button layoutX="161.0" layoutY="20.0" mnemonicParsing="false" onAction="#updateMedicine" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
       <TextField layoutX="962.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="pretrazi" style="-fx-background-radius: 100;" />
       <Button layoutX="317.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteMedicine" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
       <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="926.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../resources/search-interface-symbol.png" />
+            <Image url="@../../../../resources/search-interface-symbol.png" />
          </image>
       </ImageView>
       <Button layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 0; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">

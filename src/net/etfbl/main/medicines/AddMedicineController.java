@@ -1,4 +1,4 @@
-package net.etfbl.main;
+package net.etfbl.main.medicines;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;

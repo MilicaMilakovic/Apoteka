@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.medicines.UpdateMedicineController">
+   <children>
+      <TextField fx:id="nazivField" layoutX="59.0" layoutY="67.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="kategorijaField" layoutX="265.0" layoutY="67.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <DatePicker fx:id="datumProizvodnjeField" layoutX="59.0" layoutY="177.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="59.0" layoutY="50.0" text="Genericki naziv" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="50.0" text="Kategorija" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prodajnaCijenaField" layoutX="58.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="nabavnaCijenaField" layoutX="265.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="58.0" layoutY="102.0" text="Prodajna cijena" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="102.0" text="Nabavna cijena" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="opisField" layoutX="63.0" layoutY="291.0" prefHeight="103.0" prefWidth="183.0" />
+      <DatePicker fx:id="rokUpotrebeField" layoutX="265.0" layoutY="177.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="58.0" layoutY="160.0" text="Datum proizvodnje" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="160.0" text="Rok upotrebe" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="kolicinaField" layoutX="59.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="jacinaField" layoutX="265.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="58.0" layoutY="216.0" text="Kolicina" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="216.0" text="Jacina" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="kontraindikacijeField" layoutX="265.0" layoutY="291.0" prefHeight="103.0" prefWidth="183.0" />
+      <Label layoutX="63.0" layoutY="274.0" text="Dodatni opis" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="265.0" layoutY="274.0" text="Kontraindikacije" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="oblikField" layoutX="63.0" layoutY="422.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <Label layoutX="63.0" layoutY="405.0" text="Farmaceutski oblik" textFill="#6f6f6f">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="136.0" layoutY="481.0" mnemonicParsing="false" onAction="#update" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: linear-gradient(#2B9044, #84C040); -fx-background-radius: 0;" text="IZMIJENI" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/check-mark.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.43478259444236755" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button layoutX="273.0" layoutY="481.0" mnemonicParsing="false" onAction="#clear" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #ED5666; -fx-background-radius: 0;" text="OBRISI UNOS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/error.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.43478259444236755" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Label layoutX="22.0" layoutY="14.0" text="IZMIJENI LIJEK:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="medicine" layoutX="122.0" layoutY="14.0" />
+   </children>
+</AnchorPane>

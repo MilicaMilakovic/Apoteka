@@ -1,4 +1,4 @@
-package net.etfbl.main;
+package net.etfbl.main.medicines;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -96,6 +96,21 @@ public class MedicinesController implements Initializable {
             LijekDAO lijekDAO = new LijekDAO();
             lijekDAO.obrisiLijek(selected.getLijekID());
             getData();
+        }
+    }
+
+    public void updateMedicine(){
+        Stage primaryStage = new Stage();
+        Parent root = null;
+        UpdateMedicineController.medToUpdate = table.getSelectionModel().getSelectedItem();
+        try {
+            root = FXMLLoader.load(getClass().getResource("UpdateMedicine.fxml"));
+            primaryStage.setTitle("Izmijeni lijek");
+
+            primaryStage.setScene(new Scene(root, 500  , 550));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

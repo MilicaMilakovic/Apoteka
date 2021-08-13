@@ -115,7 +115,7 @@ public class LijekDAO {
             ps.setBigDecimal(8,BigDecimal.valueOf(lijek.getKolicina()));
             ps.setString(9,lijek.getDodatniOpis());
             ps.setString(10,lijek.getFarmaceutskiOblik());
-            ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getKolicina()));
+            ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getJacinaLijeka()));
 
             retVal = ps.executeUpdate() == 1;
 
@@ -155,7 +155,8 @@ public class LijekDAO {
                 + "Kolicina=?,"
                 + "DodatniOpis=?,"
                 + "FarmaceutskiOblik=?,"
-                + "JacinaLijeka=?";
+                + "JacinaLijeka=?"
+                + "WHERE LijekID=?";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -170,7 +171,8 @@ public class LijekDAO {
             ps.setBigDecimal(8,BigDecimal.valueOf(lijek.getKolicina()));
             ps.setString(9,lijek.getDodatniOpis());
             ps.setString(10,lijek.getFarmaceutskiOblik());
-            ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getKolicina()));
+            ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getJacinaLijeka()));
+            ps.setInt(12, lijek.getLijekID());
 
             retVal = ps.executeUpdate() == 1;
 

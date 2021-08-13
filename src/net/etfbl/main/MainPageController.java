@@ -33,7 +33,7 @@ public class MainPageController implements Initializable {
         Parent root = null;
         try {
 
-            root = FXMLLoader.load(getClass().getResource("Medicines.fxml"));
+            root = FXMLLoader.load(getClass().getResource("medicines/Medicines.fxml"));
 
             pane.getChildren().removeAll();
             pane.getChildren().setAll(root);
@@ -55,5 +55,10 @@ public class MainPageController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void logOut(){
+        System.exit(0);
     }
 }
