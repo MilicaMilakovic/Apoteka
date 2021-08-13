@@ -1,7 +1,6 @@
 package net.etfbl.main;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +16,6 @@ import net.etfbl.dto.LijekDTO;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MedicinesController implements Initializable {
@@ -50,6 +48,7 @@ public class MedicinesController implements Initializable {
     public TableColumn<LijekDTO, Double> jacinaCol;
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,Integer>("lijekID"));
@@ -76,7 +75,7 @@ public class MedicinesController implements Initializable {
         table.setItems(FXCollections.observableArrayList(lijekovi));
     }
 
-    public void dodajLijek(){
+    public void addMedicine(){
         Stage primaryStage = new Stage();
         Parent root = null;
 
@@ -89,5 +88,14 @@ public class MedicinesController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+
+    public void deleteMedicine(){
+        LijekDTO selected = table.getSelectionModel().getSelectedItem();
+        if(selected!=null){
+            LijekDAO lijekDAO = new LijekDAO();
+            lijekDAO.obrisiLijek(selected.getLijekID());
+            getData();
+        }
     }
 }

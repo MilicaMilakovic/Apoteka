@@ -46,13 +46,13 @@
          </font></Button>
       <Button layoutX="161.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Izmijeni" />
       <TextField layoutX="962.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="pretrazi" style="-fx-background-radius: 100;" />
-      <Button layoutX="317.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
+      <Button layoutX="317.0" layoutY="20.0" mnemonicParsing="false" onAction="#deleteMedicine" prefHeight="37.0" prefWidth="137.0" text="Obrisi" />
       <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="926.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/search-interface-symbol.png" />
          </image>
       </ImageView>
-      <Button layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#dodajLijek" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 0; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
+      <Button layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 0; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
