@@ -57,7 +57,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button graphicTextGap="10.0" layoutX="17.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="17.0" layoutY="20.0" mnemonicParsing="false" onAction="#view" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

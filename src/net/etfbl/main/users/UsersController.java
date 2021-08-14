@@ -11,7 +11,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.etfbl.dao.ApotekaDAO;
+import net.etfbl.dao.TelefonApotekeDAO;
 import net.etfbl.dao.ZaposleniDAO;
+import net.etfbl.dao.ZaposlenjeDAO;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.io.IOException;
@@ -100,6 +103,23 @@ public class UsersController implements Initializable {
         ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
 
         table.setItems(FXCollections.observableArrayList(zaposleniDAO.pretragaPoImenu(name)));
+
+    }
+
+    public void view(){
+
+        ViewUserController.zaposleni = table.getSelectionModel().getSelectedItem();
+
+        Stage primaryStage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("ViewUser.fxml"));
+            primaryStage.setTitle("Pregled naloga zaposlenog");
+            primaryStage.setScene(new Scene(root, 500  , 550));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

@@ -140,42 +140,42 @@
             <DropShadow color="#7a87c98c" />
          </effect>
       </ImageView>
-      <Button graphicTextGap="20.0" layoutX="1.0" layoutY="241.0" mnemonicParsing="false" onAction="#medicines" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Lijekovi">
+      <Button graphicTextGap="20.0" layoutY="241.0" mnemonicParsing="false" onAction="#medicines" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Lijekovi">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="1.0" layoutY="284.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
+      <Button layoutY="284.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button graphicTextGap="20.0" layoutX="1.0" layoutY="327.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Pacijenti" textAlignment="CENTER">
+      <Button graphicTextGap="20.0" layoutY="327.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Pacijenti" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="1.0" layoutY="368.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Doktori">
+      <Button layoutY="368.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Doktori">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="1.0" layoutY="411.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Inventar">
+      <Button layoutY="411.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Inventar">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="1.0" layoutY="454.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Dobavljači">
+      <Button layoutY="454.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Dobavljači">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -196,7 +196,7 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="1.0" layoutY="497.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Proizvodjači">
+      <Button layoutY="497.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Proizvodjači">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -94,7 +94,8 @@
       <TextField fx:id="imeField" layoutX="52.0" layoutY="114.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" />
       <TextField fx:id="prezimeField" layoutX="52.0" layoutY="172.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" />
       <TextField fx:id="korImeField" layoutX="52.0" layoutY="228.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" />
-      <PasswordField fx:id="lozinkaField" layoutX="52.0" layoutY="286.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" />
+      <PasswordField fx:id="lozinkaField" layoutX="54.0" layoutY="286.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="lozinkaUnmasked" layoutX="54.0" layoutY="284.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" visible="false" />
       <DatePicker fx:id="datumRodjenjaField" layoutX="52.0" layoutY="366.0" prefHeight="31.0" prefWidth="174.0" style="-fx-background-radius: 0;" />
       <TextField fx:id="plataField" layoutX="274.0" layoutY="366.0" prefHeight="31.0" prefWidth="174.0" style="-fx-background-radius: 0;" />
       <Label layoutX="274.0" layoutY="332.0" />
@@ -104,6 +105,5 @@
          </font>
       </Label>
       <CheckBox fx:id="showPass" layoutX="52.0" layoutY="324.0" mnemonicParsing="false" onAction="#togglevisiblePassword" text="Prikazi lozinku" />
-      <TextField fx:id="lozinkaUnmasked" layoutX="62.0" layoutY="296.0" prefHeight="31.0" prefWidth="393.0" style="-fx-background-radius: 0;" visible="false" />
    </children>
 </AnchorPane>
