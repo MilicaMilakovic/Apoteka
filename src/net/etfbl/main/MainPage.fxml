@@ -42,7 +42,7 @@
                   <DropShadow color="#0000006e" />
                </effect>
             </ImageView>
-            <Label layoutX="74.0" layoutY="42.0" text="Dobro došli, Milice!" textFill="WHITE">
+            <Label layoutX="74.0" layoutY="42.0" text="Dobro došli!" textFill="WHITE">
                <font>
                   <Font size="19.0" />
                </font>
@@ -147,7 +147,7 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutY="284.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
+      <Button layoutY="284.0" mnemonicParsing="false" onAction="#prescriptions" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -222,7 +222,7 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <Button layoutY="540.0" mnemonicParsing="false" onAction="#users" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
+      <Button layoutX="1.0" layoutY="541.0" mnemonicParsing="false" onAction="#users" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -18,7 +18,7 @@ public class TelefonApotekeDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT Telefon,APOTEKA_ApotekaID FROM telefon_apoteke WHERE APOTEKA_ApotekaID=?";
+        String query = "SELECT Telefon, ApotekaID FROM telefon_apoteke WHERE ApotekaID=?";
 
         try {
             conn = ConnectionPool.getInstance().checkOut();

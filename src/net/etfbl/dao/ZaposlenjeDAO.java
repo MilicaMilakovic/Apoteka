@@ -17,8 +17,8 @@ public class ZaposlenjeDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query= "SELECT ZAPOSLENI_ZaposleniID,APOTEKA_ApotekaID,DatumOd,DatumDo FROM zaposlenje "
-                        + "WHERE ZAPOSLENI_ZaposleniID=? and APOTEKA_ApotekaID=?";
+        String query= "SELECT ZaposleniID, ApotekaID,DatumOd,DatumDo FROM zaposlenje "
+                        + "WHERE ZaposleniID=? and ApotekaID=?";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();

@@ -6,8 +6,8 @@ public class ZaposlenjeDTO {
 
     private int zaposleniID;
     private int apotekaID;
-    private String datumOd;
-    private String datumDo;
+    private String datumOd="--";
+    private String datumDo="--";
 
     public ZaposlenjeDTO(int zaposleniID, int apotekaID, String datumOd, String datumDo) {
         this.zaposleniID = zaposleniID;

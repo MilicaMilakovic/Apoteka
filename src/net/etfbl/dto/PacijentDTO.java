@@ -10,7 +10,7 @@ public class PacijentDTO {
     private String prezime;
     private String datumRodjenja;
     private String adresa;
-    private String terapija;
+    private String sifraBolesti;
     private String alergije;
     private String osiguranje;
     private int doktorID;
@@ -19,14 +19,14 @@ public class PacijentDTO {
     }
 
     public PacijentDTO(int pacijentID, String jmb, String ime, String prezime, String datumRodjenja,
-                       String adresa, String terapija, String alergije, String osiguranje, int doktorID) {
+                       String adresa, String sifraBolesti,  String alergije, String osiguranje, int doktorID) {
         this.pacijentID = pacijentID;
         this.jmb = jmb;
         this.ime = ime;
         this.prezime = prezime;
         this.datumRodjenja = datumRodjenja;
         this.adresa = adresa;
-        this.terapija = terapija;
+        this.sifraBolesti = sifraBolesti;
         this.alergije = alergije;
         this.osiguranje = osiguranje;
         this.doktorID = doktorID;
@@ -47,6 +47,9 @@ public class PacijentDTO {
     public void setJmb(String jmb) {
         this.jmb = jmb;
     }
+
+    public void setSifraBolesti(String sifraBolesti) { this.sifraBolesti=sifraBolesti; }
+    public String getSifraBolesti() { return  sifraBolesti; }
 
     public String getIme() {
         return ime;
@@ -80,13 +83,6 @@ public class PacijentDTO {
         this.adresa = adresa;
     }
 
-    public String getTerapija() {
-        return terapija;
-    }
-
-    public void setTerapija(String terapija) {
-        this.terapija = terapija;
-    }
 
     public String getAlergije() {
         return alergije;
@@ -134,7 +130,7 @@ public class PacijentDTO {
                 ", prezime='" + prezime + '\'' +
                 ", datumRodjenja='" + datumRodjenja + '\'' +
                 ", adresa='" + adresa + '\'' +
-                ", terapija='" + terapija + '\'' +
+                ", sifraBolesti='" + sifraBolesti + '\'' +
                 ", alergije='" + alergije + '\'' +
                 ", osiguranje='" + osiguranje + '\'' +
                 ", doktorID=" + doktorID +

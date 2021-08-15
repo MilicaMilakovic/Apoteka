@@ -9,27 +9,23 @@ public class ReceptDTO {
     private String prezime;
     private String brojZdravstvenogKartona;
     private String nazivZdravstveneUstanove;
-    private String adresaZdravstveneUstanove;
 
     private String datumPropisivanjaRecepta;
     private String licniBrojOsiguranika;
-    private String napomena;
 
     private int pacijentID;
     private int doktorID;
     private int lijekID;
 
-    public ReceptDTO(int receptID, String ime, String prezime, String brojZdravstvenogKartona, String nazivZdravstveneUstanove, String adresaZdravstveneUstanove,
-                     String datumPropisivanjaRecepta, String licniBrojOsiguranika, String napomena, int pacijentID, int doktorID, int lijekID) {
+    public ReceptDTO(int receptID, String ime, String prezime, String brojZdravstvenogKartona, String nazivZdravstveneUstanove,
+                     String datumPropisivanjaRecepta, String licniBrojOsiguranika, int pacijentID, int doktorID, int lijekID) {
         this.receptID = receptID;
         this.ime = ime;
         this.prezime = prezime;
         this.brojZdravstvenogKartona = brojZdravstvenogKartona;
         this.nazivZdravstveneUstanove = nazivZdravstveneUstanove;
-        this.adresaZdravstveneUstanove = adresaZdravstveneUstanove;
         this.datumPropisivanjaRecepta = datumPropisivanjaRecepta;
         this.licniBrojOsiguranika = licniBrojOsiguranika;
-        this.napomena = napomena;
         this.pacijentID = pacijentID;
         this.doktorID = doktorID;
         this.lijekID = lijekID;
@@ -78,13 +74,6 @@ public class ReceptDTO {
         this.nazivZdravstveneUstanove = nazivZdravstveneUstanove;
     }
 
-    public String getAdresaZdravstveneUstanove() {
-        return adresaZdravstveneUstanove;
-    }
-
-    public void setAdresaZdravstveneUstanove(String adresaZdravstveneUstanove) {
-        this.adresaZdravstveneUstanove = adresaZdravstveneUstanove;
-    }
 
     public String getDatumPropisivanjaRecepta() {
         return datumPropisivanjaRecepta;
@@ -102,13 +91,6 @@ public class ReceptDTO {
         this.licniBrojOsiguranika = licniBrojOsiguranika;
     }
 
-    public String getNapomena() {
-        return napomena;
-    }
-
-    public void setNapomena(String napomena) {
-        this.napomena = napomena;
-    }
 
     public int getPacijentID() {
         return pacijentID;
@@ -155,10 +137,8 @@ public class ReceptDTO {
                 ", prezime='" + prezime + '\'' +
                 ", brojZdravstvenogKartona='" + brojZdravstvenogKartona + '\'' +
                 ", nazivZdravstveneUstanove='" + nazivZdravstveneUstanove + '\'' +
-                ", adresaZdravstveneUstanove='" + adresaZdravstveneUstanove + '\'' +
                 ", datumPropisivanjaRecepta='" + datumPropisivanjaRecepta + '\'' +
                 ", licniBrojOsiguranika='" + licniBrojOsiguranika + '\'' +
-                ", napomena='" + napomena + '\'' +
                 ", pacijentID=" + pacijentID +
                 ", doktorID=" + doktorID +
                 ", lijekID=" + lijekID +

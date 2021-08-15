@@ -28,12 +28,12 @@
          </effect></Rectangle>
       <TextField fx:id="usernameField" layoutX="53.0" layoutY="192.0" prefHeight="33.0" prefWidth="223.0" promptText="Korisničko ime" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: #EEEDF0; -fx-background-color: #ffffff; -fx-border-width: 2;" />
       <PasswordField fx:id="passwordField" layoutX="53.0" layoutY="261.0" prefHeight="33.0" prefWidth="223.0" promptText="Lozinka" style="-fx-background-radius: 3; -fx-border-radius: 3; -fx-border-color: #EEEDF0; -fx-background-color: #ffffff; -fx-border-width: 2;" />
-      <Button fx:id="btn" layoutX="108.0" layoutY="361.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="113.0" style="-fx-background-radius: 100; -fx-background-color: #90CAF9;" text="Prijavi se" textFill="WHITE">
+      <Button fx:id="btn" layoutX="108.0" layoutY="361.0" mnemonicParsing="false" onAction="#login" prefHeight="33.0" prefWidth="113.0" style="-fx-background-radius: 100; -fx-background-color: linear-gradient(to left,#407BFF, #90CAF9);" text="Prijavi se" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
          <effect>
-            <DropShadow color="#0000004e" />
+            <DropShadow color="#00000065" />
          </effect>
          <cursor>
             <Cursor fx:constant="HAND" />

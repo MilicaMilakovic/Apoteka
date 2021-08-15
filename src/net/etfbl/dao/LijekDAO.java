@@ -96,7 +96,8 @@ public class LijekDAO {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "INSERT INTO lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,DodatniOpis,FarmaceutskiOblik,JacinaLijeka) VALUES "+
+        String query = "INSERT INTO lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije," +
+                "DatumProizvodnje,RokUpotrebe,Kolicina,DodatniOpis,FarmaceutskiOblik,JacinaLijeka) VALUES "+
                 "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
         try{

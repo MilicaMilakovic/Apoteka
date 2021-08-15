@@ -54,7 +54,7 @@
             <DropShadow color="#0000006e" />
          </effect>
       </ImageView>
-      <Label layoutX="74.0" layoutY="42.0" text="Dobro došli, Milice!" textFill="WHITE">
+      <Label layoutX="74.0" layoutY="42.0" text="Dobro došli!" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>

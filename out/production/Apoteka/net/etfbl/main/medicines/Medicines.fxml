@@ -40,7 +40,7 @@
             <TableColumn fx:id="jacinaCol" minWidth="2.0" prefWidth="90.0" text="Jacina [mg]" />
         </columns>
       </TableView>
-      <Button graphicTextGap="10.0" layoutX="17.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: #91A8E8; -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="17.0" layoutY="20.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -95,7 +95,7 @@
          <effect>
             <DropShadow color="#00000066" />
          </effect></Button>
-      <Button layoutX="17.0" layoutY="77.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: linear-gradient(#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
+      <Button layoutX="17.0" layoutY="77.0" mnemonicParsing="false" onAction="#addMedicine" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: linear-gradient(to left,#2B9044, #84C040);" text="DODAJ LIJEK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

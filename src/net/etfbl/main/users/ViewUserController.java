@@ -92,15 +92,24 @@ public class ViewUserController implements Initializable {
         int id = idApoteke.getValue();
 
         apoteka = apotekaDAO.apoteka(id);
-        zaposlenje = zaposlenjeDAO.zaposlenje(zaposleni.getId(),id);
         telefon = telefonApotekeDAO.telefonApoteke(id);
-
+        
         nazivApotekeLabel.setText("Naziv apoteke: " + apoteka.getNaziv());
         adresaApotekeLabel.setText("Adresa: " + apoteka.getAdresa());
         emailLabel.setText("Email: " + apoteka.getEmail() );
         telefonLabel.setText("Broj telefona: " + telefon.getTelefon());
-        datumOdLabel.setText("Zaposlen od: " + zaposlenje.getDatumOd());
-        datumDoLabel.setText("Zaposlen do: " + zaposlenje.getDatumDo());
+
+        zaposlenje = zaposlenjeDAO.zaposlenje(zaposleni.getId(),id);
+        if(zaposlenje!=null)
+        {
+            datumOdLabel.setText("Zaposlen od: " + zaposlenje.getDatumOd());
+            datumDoLabel.setText("Zaposlen do: " + zaposlenje.getDatumDo());
+        }
+        else {
+            datumOdLabel.setText("Zaposlen od: -- " );
+            datumDoLabel.setText("Zaposlen do: -- ");
+        }
+
 
 
     }

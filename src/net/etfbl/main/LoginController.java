@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import net.etfbl.dao.ZaposleniDAO;
@@ -49,7 +50,11 @@ public class LoginController {
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-                primaryStage.setTitle("Hello World");
+
+                primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
+                primaryStage.setTitle("Apoteka");
+
                 primaryStage.setScene(new Scene(root, 1370, 708));
                 primaryStage.show();
 

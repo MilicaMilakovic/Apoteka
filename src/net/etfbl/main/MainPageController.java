@@ -4,7 +4,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +20,7 @@ public class MainPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Parent root = null;
+
 
         try {
 
@@ -72,6 +75,21 @@ public class MainPageController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void prescriptions(){
+        Parent root = null;
+        try {
+
+            root = FXMLLoader.load(getClass().getResource("prescriptions/Prescriptions.fxml"));
+
+            pane.getChildren().removeAll();
+            pane.getChildren().setAll(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void logOut(){
         System.exit(0);
     }
