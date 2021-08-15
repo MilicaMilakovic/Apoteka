@@ -33,6 +33,13 @@ insert into apoteka (Naziv,Adresa,Email) values ('B-pharm','Karadjordjeva 120','
 insert into zaposlenje (ZAPOSLENI_ZaposleniID, APOTEKA_ApotekaID,DatumOd) values (2,1,'2019-10-10');
 select * from apoteka;
 
+select * from zaposlenje;
+select ApotekaID from apoteka;
+insert into telefon_apoteke values ('051280060',1);
+select * from telefon_apoteke;
+
 select JMB,Ime,Prezime,KorisnickoIme,Lozinka,DatumRodjenja,Plata,DatumOd,DatumDo,ApotekaID,Naziv,Adresa,Email from zaposleni
 inner join zaposlenje on ZaposleniID=ZAPOSLENI_ZaposleniID
 inner join apoteka on ApotekaID=APOTEKA_ApotekaID;
+
+UPDATE `bp_apoteka`.`zaposlenje` SET `DatumDo` = '2022-10-10' WHERE (`ZAPOSLENI_ZaposleniID` = '2') and (`APOTEKA_ApotekaID` = '1');

@@ -2,11 +2,13 @@ package net.etfbl.main;
 
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -23,7 +25,10 @@ public class LoginController {
     public TextField usernameField;
     @FXML
     public PasswordField passwordField;
-
+    @FXML
+    public TextField lozinkaUnmasked;
+    @FXML
+    public CheckBox showPass;
 
     public void login(){
 
@@ -69,6 +74,21 @@ public class LoginController {
         translateTransition.setInterpolator(Interpolator.EASE_BOTH);
         translateTransition.play();
         translateTransition.setOnFinished(e -> {btn.setTranslateX(0);});
+    }
+
+    @FXML
+    public void togglevisiblePassword(ActionEvent event) {
+        if (showPass.isSelected()) {
+            String pass = passwordField.getText();
+            lozinkaUnmasked.setText(pass);
+            passwordField.setVisible(false);
+            lozinkaUnmasked.setVisible(true);
+            return;
+        }
+        lozinkaUnmasked.setVisible(false);
+        passwordField.setVisible(true);
+        passwordField.setText(lozinkaUnmasked.getText());
+
     }
 }
 
