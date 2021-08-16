@@ -1,12 +1,9 @@
 use bp_apoteka;
 
 drop view if exists recept_info;
-
 create view recept_info as
 select r.ReceptID, concat(r.Ime,' ', r.prezime) as Pacijent, l.GenerickiNaziv, r.PropisanaKolicina, concat( d.Ime,' ', d.Prezime) as Doktor, r.DatumPropisivanjaLijeka, l.ProdajnaCijena, l.LijekID, r.Vazeci
 from recept r natural join lijek l left outer join doktor d on d.DoktorID=r.DoktorID;
-
-INSERT INTO `bp_apoteka`.`izdavanje_lijeka` (`ZaposleniID`, `LijekID`, `ReceptID`, `KolicinaIzdatogLijeka`, `DatumIzdavanja`) VALUES ('1', '1', '1', '1', now());
 
 select * from recept;
 
@@ -23,21 +20,29 @@ BEGIN
 END$$
 delimiter ;
 
-
 call generisi_racun;
 
-select * from fiskalni_racun;
-select * from fiskalni_racun_stavka;
-
+drop trigger if exists ponisti_recept_trig;
 delimiter $$
 create trigger ponisi_recept_trig after insert on izdavanje_lijeka 
 for each row 
 begin
+	declare cijena_sum decimal(6,2);
 	update recept set Vazeci=0 where ReceptID=new.ReceptID;
 end $$
 delimiter ;
 
-select * from recept_info;
+drop trigger if exists sracunaj_cijenu;
+delimiter $$
+create trigger sracunaj_cijenu after insert on fiskalni_racun_stavka 
+for each row 
+begin
+	declare ukupno decimal (6,2);
+    set ukupno = (select CijenaUkupno from fiskalni_racun where RacunID = new.RacunID);
+    update fiskalni_racun set CijenaUkupno = ukupno + new.Cijena where RacunID= new.RacunID;
+end $$
+delimiter ;
+
 
 select * from izdavanje_lijeka;
 SELECT * FROM fiskalni_racun;

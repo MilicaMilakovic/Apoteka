@@ -12,18 +12,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import net.etfbl.mysql.ReceptInfoDAO;
 import net.etfbl.dto.ReceptInfoDTO;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.spec.ECField;
 import java.util.ResourceBundle;
 
 public class PrescriptionsController implements Initializable {
 
     @FXML
-    private TableView<ReceptInfoDTO> table;
+    public TableView<ReceptInfoDTO> table;
 
     @FXML
     private TableColumn<ReceptInfoDTO, Integer> idCol;
@@ -47,6 +49,11 @@ public class PrescriptionsController implements Initializable {
     private TableColumn<ReceptInfoDTO, Double> cijenaCol;
 
     @FXML
+    private TableColumn<ReceptInfoDTO, String> statusCol;
+
+    public static boolean refresh;
+
+    @FXML
     private TextField searchField;
 
     @Override
@@ -58,7 +65,23 @@ public class PrescriptionsController implements Initializable {
         doktorCol.setCellValueFactory(new PropertyValueFactory<>("doktor"));
         datumCol.setCellValueFactory(new PropertyValueFactory<>("datumPropisivanjaLijeka"));
         cijenaCol.setCellValueFactory(new PropertyValueFactory<>("prodajnaCijena"));
+        statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
+        new Thread(()->{
+            System.out.println("refresh thread");
+            while (true){
+                if(refresh){
+                    getData();
+                    refresh = false;
+
+                }
+                try{
+                    Thread.sleep(100);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         getData();
     }
 
@@ -85,9 +108,12 @@ public class PrescriptionsController implements Initializable {
 
             if(!info.isVazeci()){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
                 alert.setTitle("Obavjestenje");
                 alert.setHeaderText(null);
-                String s ="Neuspjesno izdavanje lijeka na recept! Recept nije vazeci, propisani lijek je izdat.";
+                String s ="Neuspjesno izdavanje lijeka na recept! Recept nije vazeci, propisani lijek je vec izdat.";
                 alert.setContentText(s);
                 alert.show();
             }
@@ -95,7 +121,9 @@ public class PrescriptionsController implements Initializable {
             {
                 try {
                     root = FXMLLoader.load(getClass().getResource("CheckOut.fxml"));
-                    primaryStage.setTitle("Izdaj lijek na recept");
+
+                    primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+                    primaryStage.setTitle("Izdavanje lijeka na recept");
                     primaryStage.setScene(new Scene(root, 550  , 600));
                     primaryStage.show();
                 } catch (IOException e) {

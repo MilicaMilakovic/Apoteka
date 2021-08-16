@@ -99,6 +99,6 @@ public class UpdateUserController implements Initializable {
         ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
         System.out.println(userToUpdate);
         zaposleniDAO.azuriraj(userToUpdate);
-
+        UsersController.refresh = true;
     }
 }

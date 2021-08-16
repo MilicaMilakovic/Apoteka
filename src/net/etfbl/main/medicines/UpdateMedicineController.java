@@ -113,6 +113,7 @@ public class UpdateMedicineController implements Initializable {
         LijekDAO lijekDAO = new LijekDAO();
         lijekDAO.azurirajLijek(medToUpdate);
 
+        MedicinesController.refresh = true;
         clear();
     }
 }

@@ -12,6 +12,8 @@ public class ReceptInfoDTO {
     private int lijekID;
     private boolean vazeci;
 
+    private String status;
+
     public ReceptInfoDTO() {
     }
 
@@ -27,6 +29,16 @@ public class ReceptInfoDTO {
         this.prodajnaCijena = prodajnaCijena;
         this.lijekID = lijekID;
         this.vazeci =vazeci;
+
+        status = vazeci ? "Vazeci":"Nevazeci";
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public boolean isVazeci() {
@@ -35,6 +47,7 @@ public class ReceptInfoDTO {
 
     public void setVazeci(boolean vazeci) {
         this.vazeci = vazeci;
+        status = vazeci ? "Vazeci":"Nevazeci";
     }
 
     public int getReceptID() {

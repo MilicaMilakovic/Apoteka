@@ -53,6 +53,7 @@ public class AddMedicineController {
         LijekDAO lijekDAO = new LijekDAO();
         lijekDAO.dodajLijek(lijek);
 
+        MedicinesController.refresh = true;
         clear();
     }
 

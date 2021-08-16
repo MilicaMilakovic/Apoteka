@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import net.etfbl.mysql.LijekDAO;
 import net.etfbl.dto.LijekDTO;
@@ -50,6 +51,7 @@ public class MedicinesController implements Initializable {
 
     @FXML
     public TextField searchField;
+    public static boolean refresh;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -66,6 +68,19 @@ public class MedicinesController implements Initializable {
         farmaceutskiOblikCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("farmaceutskiOblik"));
         jacinaCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,Double>("jacinaLijeka"));
 
+        new Thread(()->{
+            while (true){
+                if(refresh){
+                    getData();
+                    refresh = false;
+                }
+                try{
+                    Thread.sleep(100);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         getData();
     }
 
@@ -83,6 +98,8 @@ public class MedicinesController implements Initializable {
 
         try {
             root = FXMLLoader.load(getClass().getResource("AddMedicine.fxml"));
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             primaryStage.setTitle("Dodaj lijek");
             primaryStage.setScene(new Scene(root, 500  , 550));
             primaryStage.show();
@@ -108,6 +125,8 @@ public class MedicinesController implements Initializable {
         try {
             root = FXMLLoader.load(getClass().getResource("UpdateMedicine.fxml"));
             primaryStage.setTitle("Izmijeni lijek");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
 
             primaryStage.setScene(new Scene(root, 500  , 550));
             primaryStage.show();

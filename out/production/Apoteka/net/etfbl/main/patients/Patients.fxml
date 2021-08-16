@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.prescriptions.PrescriptionsController">
+<AnchorPane prefHeight="768.0" prefWidth="1212.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="323.0" fitWidth="1253.0" layoutX="-9.0" layoutY="-8.0" rotate="180.0">
          <image>
@@ -23,16 +23,18 @@
             <Image url="@../../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutX="73.0" layoutY="130.0" prefHeight="546.0" prefWidth="1004.0">
+      <TableView fx:id="table" layoutX="38.0" layoutY="133.0" prefHeight="546.0" prefWidth="1040.0">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="38.0" text="id" />
-            <TableColumn fx:id="pacijentCol" prefWidth="141.0" text="Pacijent" />
-            <TableColumn fx:id="lijekCol" prefWidth="134.0" text="Lijek" />
-            <TableColumn fx:id="propisanaKolicinaCol" prefWidth="160.0" text="Propisana kolicina" />
-            <TableColumn fx:id="doktorCol" prefWidth="131.0" text="Doktor" />
-            <TableColumn fx:id="datumCol" prefWidth="185.0" text="Datum propisivanja lijeka" />
-            <TableColumn fx:id="cijenaCol" prefWidth="120.0" text="Cijena" />
-            <TableColumn fx:id="statusCol" prefWidth="94.0" text="Status" />
+            <TableColumn fx:id="jmbCol" prefWidth="141.0" text="JMB" />
+            <TableColumn fx:id="imeCol" prefWidth="134.0" text="Ime" />
+            <TableColumn fx:id="prezimeCol" prefWidth="160.0" text="Prezime" />
+            <TableColumn fx:id="datumRodjenjaCol" prefWidth="131.0" text="Datum rodjenja" />
+            <TableColumn fx:id="adresaCol" prefWidth="103.0" text="Adresa" />
+            <TableColumn fx:id="sifraBolestiCol" prefWidth="104.0" text="Sifra bolesti" />
+            <TableColumn fx:id="alergijeCol" prefWidth="75.0" text="Alergije" />
+            <TableColumn fx:id="osiguranjeCol" prefWidth="75.0" text="Osiguranje" />
+            <TableColumn fx:id="doktorIDCol" prefWidth="78.0" text="DoktorID" />
          </columns>
       </TableView>
       <Button graphicTextGap="10.0" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">

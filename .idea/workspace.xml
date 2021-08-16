@@ -2,36 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/net/etfbl/dto/FiskalniRacunStavkaDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/FiskalniRacunDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/FiskalniRacunStavkaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/DoktorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shema/apotekaScript.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Shema/apotekaScript.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shema/apoteka_podaci.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Shema/apoteka_podaci.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shema/bp_apoteka.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/Shema/bp_apoteka.mwb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shema/bp_apoteka.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/Shema/bp_apoteka.mwb.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shema/bp_apoteka_dodatak.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Shema/bp_apoteka_dodatak.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/FiskalniRacunDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/FiskalniRacunDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/IzdavanjeLijekaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/IzdavanjeLijekaDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/ReceptDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/ReceptDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/ReceptInfoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/dto/ReceptInfoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/CheckOut.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/CheckOut.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/AddMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/AddMedicineController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/MedicinesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/MedicinesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/UpdateMedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/medicines/UpdateMedicineController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/CheckOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/CheckOutController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/Prescriptions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/Prescriptions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/PrescriptionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Apoteka/net/etfbl/main/prescriptions/PrescriptionsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/dto/FiskalniRacunDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/dto/FiskalniRacunDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/etfbl/dto/IzdavanjeLijekaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/dto/IzdavanjeLijekaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/dto/ReceptDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/dto/ReceptDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/etfbl/dto/ReceptInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/dto/ReceptInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/HomePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/HomePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/CheckOut.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/CheckOut.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/medicines/AddMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/medicines/AddMedicineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/medicines/MedicinesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/medicines/MedicinesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/medicines/UpdateMedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/medicines/UpdateMedicineController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/CheckOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/CheckOutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/Prescriptions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/Prescriptions.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/PrescriptionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/prescriptions/PrescriptionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/mysql/IzdavanjeLijekaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/IzdavanjeLijekaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/mysql/LijekDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/LijekDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/etfbl/mysql/ReceptInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/mysql/ReceptInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/users/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/users/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/etfbl/main/users/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/etfbl/main/users/UsersController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

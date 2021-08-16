@@ -44,6 +44,7 @@ public class AddUserController {
 
         ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
         zaposleniDAO.dodajZaposlenog(zaposleniDTO);
+        UsersController.refresh = true;
     }
 
     public void clear(){

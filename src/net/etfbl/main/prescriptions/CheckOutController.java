@@ -5,6 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import net.etfbl.dto.*;
 import net.etfbl.mysql.FiskalniRacunDAO;
 import net.etfbl.mysql.FiskalniRacunStavkaDAO;
@@ -55,12 +57,12 @@ public class CheckOutController implements Initializable {
         LijekDTO lijek = lijekDAO.lijek(info.getLijekID());
         FiskalniRacunDTO racun = fiskalniRacunDAO.kreirajRacun();
 
-        System.out.println(racun);
+//        System.out.println(racun);
 
         FiskalniRacunStavkaDTO stavka = new FiskalniRacunStavkaDTO(lijek.getLijekID(),racun.getRacunID(),
                     info.getPropisanaKolicina(),lijek.getProdajnaCijena()*info.getPropisanaKolicina());
 
-        System.out.println(stavka);
+//        System.out.println(stavka);
         fiskalniRacunStavkaDAO.dodajStavku(stavka);
 
         stavka.setNazivLijeka(lijek.getGenerickiNaziv());
@@ -71,12 +73,6 @@ public class CheckOutController implements Initializable {
         izdavanjeLijekaDTO = new IzdavanjeLijekaDTO(MainPageController.zaposleni.getId(),info.getLijekID(),
                 info.getReceptID(),info.getPropisanaKolicina(),(new Timestamp(new Date().getTime())).toString(),racun.getRacunID());
 
-//        IzdavanjeLijekaDAO izdavanjeLijekaDAO = new IzdavanjeLijekaDAO();
-//        izdavanjeLijekaDAO.evidentiraj(new IzdavanjeLijekaDTO(MainPageController.zaposleni.getId(),info.getLijekID(),
-//                info.getReceptID(),info.getPropisanaKolicina(),(new Timestamp(new Date().getTime())).toString()));
-
-
-
     }
 
     public void checkOut(){
@@ -86,13 +82,22 @@ public class CheckOutController implements Initializable {
         {
             izdavanjeLijekaDAO.evidentiraj(izdavanjeLijekaDTO);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             alert.setTitle("Obavjestenje");
             alert.setHeaderText(null);
             String s ="Evidentirano izdavanje lijeka na recept!";
             alert.setContentText(s);
             alert.show();
+            PrescriptionsController.refresh=true;
         } else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             alert.setTitle("Obavjestenje");
             alert.setHeaderText(null);
             String s ="Neuspjesno izdavanje lijeka na recept!";

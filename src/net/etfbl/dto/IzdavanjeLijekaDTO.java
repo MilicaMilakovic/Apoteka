@@ -14,8 +14,9 @@ public class IzdavanjeLijekaDTO {
     public IzdavanjeLijekaDTO() {
     }
 
-    public IzdavanjeLijekaDTO(int zaposleniID, int lijekID, int receptID,
+    public IzdavanjeLijekaDTO( int zaposleniID, int lijekID, int receptID,
                               double kolicinaIzdatogLijeka, String datumIzdavanja, int racunID) {
+
         this.zaposleniID = zaposleniID;
         this.lijekID = lijekID;
         this.receptID = receptID;
@@ -74,20 +75,6 @@ public class IzdavanjeLijekaDTO {
 
     public void setRacunID(int racunID) {
         this.racunID = racunID;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        IzdavanjeLijekaDTO that = (IzdavanjeLijekaDTO) o;
-        return zaposleniID == that.zaposleniID &&
-                lijekID == that.lijekID;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(zaposleniID, lijekID);
     }
 
     @Override

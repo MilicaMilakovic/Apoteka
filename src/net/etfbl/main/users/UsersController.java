@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import net.etfbl.mysql.ZaposleniDAO;
 import net.etfbl.dto.ZaposleniDTO;
@@ -39,6 +40,7 @@ public class UsersController implements Initializable {
 
     @FXML
     public TextField searchField;
+    public static boolean refresh;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -50,6 +52,20 @@ public class UsersController implements Initializable {
         datumRodjenjaCol.setCellValueFactory(new PropertyValueFactory<ZaposleniDTO,String>("datumRodjenja"));
         plataCol.setCellValueFactory(new PropertyValueFactory<ZaposleniDTO,Double>("plata"));
 
+
+        new Thread(()->{
+            while (true){
+                if(refresh){
+                    getData();
+                    refresh = false;
+                }
+                try{
+                    Thread.sleep(100);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         getData();
     }
 
@@ -74,6 +90,8 @@ public class UsersController implements Initializable {
         try {
             root = FXMLLoader.load(getClass().getResource("AddUser.fxml"));
             primaryStage.setTitle("Dodaj novog zaposlenog");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             primaryStage.setScene(new Scene(root, 500  , 550));
             primaryStage.show();
         } catch (IOException e) {
@@ -88,6 +106,8 @@ public class UsersController implements Initializable {
         try {
             root = FXMLLoader.load(getClass().getResource("UpdateUser.fxml"));
             primaryStage.setTitle("Izmjena naloga zaposlenog");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             primaryStage.setScene(new Scene(root, 500  , 550));
             primaryStage.show();
         } catch (IOException e) {
@@ -111,6 +131,8 @@ public class UsersController implements Initializable {
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("ViewUser.fxml"));
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
             primaryStage.setTitle("Pregled naloga zaposlenog");
             primaryStage.setScene(new Scene(root, 500  , 550));
             primaryStage.show();
