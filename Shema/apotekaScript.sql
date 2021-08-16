@@ -33,7 +33,7 @@ alter table pacijent rename column Terapija to SifraBolesti;
 select * from recept;
 
 create view recept_info as
-select r.ReceptID, r.Ime as pacijentIme, r.Prezime, l.GenerickiNaziv, d.Ime as doktorIme, r.DatumPropisivanjaLijeka, l.ProdajnaCijena
+select r.ReceptID, r.Ime as pacijentIme, r.Prezime, l.GenerickiNaziv, concat( d.Ime,' ', d.Prezime) as doktorIme, r.DatumPropisivanjaLijeka, l.ProdajnaCijena
 from (recept r natural join lijek l) natural join doktor d;
 
 select * from recept_info;

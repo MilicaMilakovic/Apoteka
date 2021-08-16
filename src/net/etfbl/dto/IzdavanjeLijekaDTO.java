@@ -9,16 +9,19 @@ public class IzdavanjeLijekaDTO {
     private int receptID;
     private double kolicinaIzdatogLijeka;
     private String datumIzdavanja;
+    private int racunID;
 
     public IzdavanjeLijekaDTO() {
     }
 
-    public IzdavanjeLijekaDTO(int zaposleniID, int lijekID, int receptID, double kolicinaIzdatogLijeka, String datumIzdavanja) {
+    public IzdavanjeLijekaDTO(int zaposleniID, int lijekID, int receptID,
+                              double kolicinaIzdatogLijeka, String datumIzdavanja, int racunID) {
         this.zaposleniID = zaposleniID;
         this.lijekID = lijekID;
         this.receptID = receptID;
         this.kolicinaIzdatogLijeka = kolicinaIzdatogLijeka;
         this.datumIzdavanja = datumIzdavanja;
+        this.racunID = racunID;
     }
 
     public int getZaposleniID() {
@@ -59,6 +62,18 @@ public class IzdavanjeLijekaDTO {
 
     public void setDatumIzdavanja(String datumIzdavanja) {
         this.datumIzdavanja = datumIzdavanja;
+    }
+
+    public void setKolicinaIzdatogLijeka(double kolicinaIzdatogLijeka) {
+        this.kolicinaIzdatogLijeka = kolicinaIzdatogLijeka;
+    }
+
+    public int getRacunID() {
+        return racunID;
+    }
+
+    public void setRacunID(int racunID) {
+        this.racunID = racunID;
     }
 
     @Override

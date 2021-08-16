@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -77,15 +78,29 @@ public class PrescriptionsController implements Initializable {
         Stage primaryStage = new Stage();
         Parent root = null;
 
-        if((CheckOutController.info = table.getSelectionModel().getSelectedItem()) != null)
+        ReceptInfoDTO info = table.getSelectionModel().getSelectedItem();
+        if(info!= null)
         {
-            try {
-                root = FXMLLoader.load(getClass().getResource("CheckOut.fxml"));
-                primaryStage.setTitle("Izdaj lijek na recept");
-                primaryStage.setScene(new Scene(root, 550  , 600));
-                primaryStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+            CheckOutController.info = info;
+
+            if(!info.isVazeci()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Obavjestenje");
+                alert.setHeaderText(null);
+                String s ="Neuspjesno izdavanje lijeka na recept! Recept nije vazeci, propisani lijek je izdat.";
+                alert.setContentText(s);
+                alert.show();
+            }
+            else
+            {
+                try {
+                    root = FXMLLoader.load(getClass().getResource("CheckOut.fxml"));
+                    primaryStage.setTitle("Izdaj lijek na recept");
+                    primaryStage.setScene(new Scene(root, 550  , 600));
+                    primaryStage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

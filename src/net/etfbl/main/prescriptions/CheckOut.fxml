@@ -54,7 +54,7 @@
          <effect>
             <DropShadow color="#000000c0" />
          </effect></Rectangle>
-      <Button layoutX="417.0" layoutY="537.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="99.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-width: 2; -fx-border-radius: 100; -fx-background-radius: 100;" text="ZAVRŠI" textFill="WHITE">
+      <Button layoutX="393.0" layoutY="533.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-width: 2; -fx-border-radius: 100; -fx-background-radius: 100;" text="IZDAJ LIJEK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -88,6 +88,6 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <TextArea layoutX="317.0" layoutY="55.0" prefHeight="349.0" prefWidth="223.0" style="-fx-background-color: transparent;" />
+      <TextArea fx:id="racunText" layoutX="317.0" layoutY="55.0" prefHeight="349.0" prefWidth="223.0" promptText="Racun" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
    </children>
 </AnchorPane>

@@ -16,8 +16,8 @@ public class IzdavanjeLijekaDAO implements IzdavanjeLijekaDAOInterface {
         PreparedStatement ps = null;
 
         String query = "INSERT INTO izdavanje_lijeka (ZaposleniID, LijekID, ReceptID, " +
-                "KolicinaIzdatogLijeka, DatumIzdavanja ) VALUES "+
-                "(?, ?, ?, ?, ?)";
+                "KolicinaIzdatogLijeka, DatumIzdavanja, RacunID ) VALUES "+
+                "(?, ?, ?, ?, ?,?)";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -28,6 +28,7 @@ public class IzdavanjeLijekaDAO implements IzdavanjeLijekaDAOInterface {
             ps.setInt(3,izdavanjeLijeka.getReceptID());
             ps.setBigDecimal(4, BigDecimal.valueOf(izdavanjeLijeka.getKolicinaIzdatogLijeka()));
             ps.setString(5,izdavanjeLijeka.getDatumIzdavanja());
+            ps.setInt(6,izdavanjeLijeka.getRacunID());
 
             retVal =   ps.executeUpdate() == 1;
 

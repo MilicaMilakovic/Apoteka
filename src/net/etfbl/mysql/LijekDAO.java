@@ -19,7 +19,7 @@ public class LijekDAO implements LijekDAOInterface {
         ResultSet rs = null;
 
         String query = "SELECT LijekID, GenerickiNaziv, Kategorija, ProdajnaCijena, NabavnaCijena" +
-                ", Kontraindikacije, DatumProizvodnje, RokUpotrebe, Kolicina, FarmaceutskiOblik, Jacina"
+                ", Kontraindikacije, DatumProizvodnje, RokUpotrebe, Kolicina, DodatniOpis,FarmaceutskiOblik, JacinaLijeka"
                 + " FROM lijek"
                 + " WHERE LijekID=?";
 

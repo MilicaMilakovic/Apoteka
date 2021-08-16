@@ -45,13 +45,6 @@ INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `DatumPropisivanjaLijeka`,`
 select * from recept;
 select * from recept r natural join lijek left outer join doktor d on d.DoktorID=r.DoktorID;
 
-drop view recept_info;
-
-create view recept_info as
-select r.ReceptID, concat(r.Ime,' ', r.prezime) as Pacijent, l.GenerickiNaziv, r.PropisanaKolicina, concat( d.Ime,' ', d.Prezime) as Doktor, r.DatumPropisivanjaLijeka, l.ProdajnaCijena, l.LijekID
-from recept r natural join lijek l left outer join doktor d on d.DoktorID=r.DoktorID;
-
-select * from recept_info;
-
-INSERT INTO `bp_apoteka`.`izdavanje_lijeka` (`ZaposleniID`, `LijekID`, `ReceptID`, `KolicinaIzdatogLijeka`, `DatumIzdavanja`) VALUES ('1', '1', '1', '1', now());
+-- INSERT INTO `bp_apoteka`.`izdavanje_lijeka` (`ZaposleniID`, `LijekID`, `ReceptID`, `KolicinaIzdatogLijeka`, `DatumIzdavanja`) VALUES ('1', '1', '1', '1', now());
 select * from izdavanje_lijeka;
+select * from fiskalni_racun;

@@ -34,7 +34,7 @@
             <TableColumn fx:id="cijenaCol" prefWidth="120.0" text="Cijena" />
          </columns>
       </TableView>
-      <Button graphicTextGap="10.0" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="IZDAJ LIJEK" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="PREGLEDAJ" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

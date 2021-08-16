@@ -6,17 +6,12 @@ public class FiskalniRacunDTO {
 
     private int racunID;
     private String datumIzdavanja;
-    private double cijena;
+    private double cijenaUkupno;
 
-    private int zaposleniID;
-    private int lijekID;
-
-    public FiskalniRacunDTO(int racunID, String datumIzdavanja, double cijena, int zaposleniID, int lijekID) {
+    public FiskalniRacunDTO(int racunID, String datumIzdavanja, double cijenaUkupno) {
         this.racunID = racunID;
         this.datumIzdavanja = datumIzdavanja;
-        this.cijena = cijena;
-        this.zaposleniID = zaposleniID;
-        this.lijekID = lijekID;
+        this.cijenaUkupno = cijenaUkupno;
     }
 
     public FiskalniRacunDTO() {
@@ -38,55 +33,20 @@ public class FiskalniRacunDTO {
         this.datumIzdavanja = datumIzdavanja;
     }
 
-    public double getCijena() {
-        return cijena;
+    public double getCijenaUkupno() {
+        return cijenaUkupno;
     }
 
-    public void setCijena(double cijena) {
-        this.cijena = cijena;
-    }
-
-    public int getZaposleniID() {
-        return zaposleniID;
-    }
-
-    public void setZaposleniID(int zaposleniID) {
-        this.zaposleniID = zaposleniID;
-    }
-
-    public int getLijekID() {
-        return lijekID;
-    }
-
-    public void setLijekID(int lijekID) {
-        this.lijekID = lijekID;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FiskalniRacunDTO racunDTO = (FiskalniRacunDTO) o;
-        return racunID == racunDTO.racunID &&
-                Double.compare(racunDTO.cijena, cijena) == 0 &&
-                zaposleniID == racunDTO.zaposleniID &&
-                lijekID == racunDTO.lijekID &&
-                Objects.equals(datumIzdavanja, racunDTO.datumIzdavanja);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(racunID, datumIzdavanja, cijena, zaposleniID, lijekID);
+    public void setCijenaUkupno(double cijenaUkupno) {
+        this.cijenaUkupno = cijenaUkupno;
     }
 
     @Override
     public String toString() {
-        return "RacunDTO{" +
+        return "FiskalniRacunDTO{" +
                 "racunID=" + racunID +
                 ", datumIzdavanja='" + datumIzdavanja + '\'' +
-                ", cijena=" + cijena +
-                ", zaposleniID=" + zaposleniID +
-                ", lijekID=" + lijekID +
+                ", cijenaUkupno=" + cijenaUkupno +
                 '}';
     }
 }

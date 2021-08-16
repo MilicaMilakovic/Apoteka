@@ -10,12 +10,14 @@ public class ReceptInfoDTO {
     private String datumPropisivanjaLijeka;
     private double prodajnaCijena;
     private int lijekID;
+    private boolean vazeci;
 
     public ReceptInfoDTO() {
     }
 
     public ReceptInfoDTO(int receptID, String pacijent, String generickiNaziv, double propisanaKolicina,
-                         String doktor, String datumPropisivanjaLijeka, double prodajnaCijena, int lijekID) {
+                         String doktor, String datumPropisivanjaLijeka,
+                         double prodajnaCijena, int lijekID, boolean vazeci) {
         this.receptID = receptID;
         this.pacijent = pacijent;
         this.generickiNaziv = generickiNaziv;
@@ -24,6 +26,15 @@ public class ReceptInfoDTO {
         this.datumPropisivanjaLijeka = datumPropisivanjaLijeka;
         this.prodajnaCijena = prodajnaCijena;
         this.lijekID = lijekID;
+        this.vazeci =vazeci;
+    }
+
+    public boolean isVazeci() {
+        return vazeci;
+    }
+
+    public void setVazeci(boolean vazeci) {
+        this.vazeci = vazeci;
     }
 
     public int getReceptID() {
