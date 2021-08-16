@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import net.etfbl.dao.ZaposleniDAO;
+import net.etfbl.mysql.ZaposleniDAO;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.net.URL;

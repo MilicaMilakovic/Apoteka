@@ -1,4 +1,4 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

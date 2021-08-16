@@ -1,5 +1,6 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
+import net.etfbl.dao.ApotekaDAOInterface;
 import net.etfbl.dto.ApotekaDTO;
 
 import java.sql.Connection;
@@ -8,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ApotekaDAO {
+public class ApotekaDAO implements ApotekaDAOInterface {
 
     public ApotekaDTO apoteka(int id ){
         ApotekaDTO retVal = null;

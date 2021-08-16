@@ -6,14 +6,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import net.etfbl.dao.LijekDAO;
+import net.etfbl.mysql.LijekDAO;
 import net.etfbl.dto.LijekDTO;
 
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.function.DoubleBinaryOperator;
 
 public class UpdateMedicineController implements Initializable {
 

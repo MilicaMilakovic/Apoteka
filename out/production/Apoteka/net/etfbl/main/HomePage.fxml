@@ -146,8 +146,8 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Circle fill="#f2f2f2" layoutX="121.0" layoutY="264.0" radius="27.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label fx:id="medCount" layoutX="106.0" layoutY="250.0" text="111">
+      <Circle fill="#f2f2f2" layoutX="121.0" layoutY="269.0" radius="27.0" stroke="WHITE" strokeType="INSIDE" />
+      <Label fx:id="medCount" layoutX="99.0" layoutY="249.0" text="111">
          <font>
             <Font name="System Bold" size="38.0" />
          </font>
@@ -184,7 +184,7 @@
          </image>
       </ImageView>
       <Circle fill="#f2f2f2" layoutX="391.0" layoutY="269.0" radius="27.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label layoutX="376.0" layoutY="255.0" text="111">
+      <Label fx:id="prescriptionCount" layoutX="364.0" layoutY="249.0" text="111">
          <font>
             <Font name="System Bold" size="38.0" />
          </font>
@@ -211,7 +211,7 @@
          </effect>
       </ImageView>
       <Circle fill="#f2f2f2" layoutX="296.0" layoutY="466.0" radius="27.0" stroke="#ffffffc4" strokeType="INSIDE" />
-      <Label fx:id="usersCount" layoutX="252.0" layoutY="443.0" text="11">
+      <Label fx:id="usersCount" layoutX="268.0" layoutY="443.0" text="11">
          <font>
             <Font name="System Bold" size="38.0" />
          </font>

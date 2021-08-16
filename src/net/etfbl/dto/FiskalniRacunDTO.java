@@ -2,7 +2,7 @@ package net.etfbl.dto;
 
 import java.util.Objects;
 
-public class RacunDTO {
+public class FiskalniRacunDTO {
 
     private int racunID;
     private String datumIzdavanja;
@@ -11,7 +11,7 @@ public class RacunDTO {
     private int zaposleniID;
     private int lijekID;
 
-    public RacunDTO(int racunID, String datumIzdavanja, double cijena, int zaposleniID, int lijekID) {
+    public FiskalniRacunDTO(int racunID, String datumIzdavanja, double cijena, int zaposleniID, int lijekID) {
         this.racunID = racunID;
         this.datumIzdavanja = datumIzdavanja;
         this.cijena = cijena;
@@ -19,7 +19,7 @@ public class RacunDTO {
         this.lijekID = lijekID;
     }
 
-    public RacunDTO() {
+    public FiskalniRacunDTO() {
     }
 
     public int getRacunID() {
@@ -66,7 +66,7 @@ public class RacunDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RacunDTO racunDTO = (RacunDTO) o;
+        FiskalniRacunDTO racunDTO = (FiskalniRacunDTO) o;
         return racunID == racunDTO.racunID &&
                 Double.compare(racunDTO.cijena, cijena) == 0 &&
                 zaposleniID == racunDTO.zaposleniID &&

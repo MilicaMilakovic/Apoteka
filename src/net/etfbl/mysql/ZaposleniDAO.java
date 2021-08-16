@@ -1,12 +1,13 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
+import net.etfbl.dao.ZaposleniDAOInterface;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ZaposleniDAO {
+public class ZaposleniDAO implements ZaposleniDAOInterface {
 
     public boolean logIn(String username, String password) {
         boolean retVal = false;
@@ -211,6 +212,37 @@ public class ZaposleniDAO {
 
             rs.next();
             retVal = rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return retVal;
+    }
+
+    public ZaposleniDTO getByName(String ime){
+        ZaposleniDTO retVal = null;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String query=  "SELECT * FROM zaposleni WHERE KorisnickoIme=?";
+
+        try
+        {
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+            ps.setString(1,ime);
+
+            rs = ps.executeQuery();
+
+            if(rs.next())
+                retVal = new ZaposleniDTO(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+                        rs.getString(7),rs.getDouble(8));
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -6,8 +6,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import net.etfbl.dao.ZaposleniDAO;
+import net.etfbl.mysql.ZaposleniDAO;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.time.format.DateTimeFormatter;

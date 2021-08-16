@@ -6,15 +6,17 @@ public class IzdavanjeLijekaDTO {
 
     private int zaposleniID;
     private int lijekID;
-    private int kolicinaIzdatogLijeka;
+    private int receptID;
+    private double kolicinaIzdatogLijeka;
     private String datumIzdavanja;
 
     public IzdavanjeLijekaDTO() {
     }
 
-    public IzdavanjeLijekaDTO(int zaposleniID, int lijekID, int kolicinaIzdatogLijeka, String datumIzdavanja) {
+    public IzdavanjeLijekaDTO(int zaposleniID, int lijekID, int receptID, double kolicinaIzdatogLijeka, String datumIzdavanja) {
         this.zaposleniID = zaposleniID;
         this.lijekID = lijekID;
+        this.receptID = receptID;
         this.kolicinaIzdatogLijeka = kolicinaIzdatogLijeka;
         this.datumIzdavanja = datumIzdavanja;
     }
@@ -35,12 +37,20 @@ public class IzdavanjeLijekaDTO {
         this.lijekID = lijekID;
     }
 
-    public int getKolicinaIzdatogLijeka() {
+    public double getKolicinaIzdatogLijeka() {
         return kolicinaIzdatogLijeka;
     }
 
     public void setKolicinaIzdatogLijeka(int kolicinaIzdatogLijeka) {
         this.kolicinaIzdatogLijeka = kolicinaIzdatogLijeka;
+    }
+
+    public int getReceptID() {
+        return receptID;
+    }
+
+    public void setReceptID(int receptID) {
+        this.receptID = receptID;
     }
 
     public String getDatumIzdavanja() {

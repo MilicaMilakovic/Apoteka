@@ -1,6 +1,6 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
-import net.etfbl.dto.ApotekaDTO;
+import net.etfbl.dao.TelefonApotekeDAOInterface;
 import net.etfbl.dto.TelefonApotekeDTO;
 
 import java.sql.Connection;
@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TelefonApotekeDAO {
+public class TelefonApotekeDAO implements TelefonApotekeDAOInterface {
 
     public TelefonApotekeDTO telefonApoteke(int id){
 

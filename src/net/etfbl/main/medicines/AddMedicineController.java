@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
-import net.etfbl.dao.LijekDAO;
+import net.etfbl.mysql.LijekDAO;
 import net.etfbl.dto.LijekDTO;
 
 import java.time.format.DateTimeFormatter;

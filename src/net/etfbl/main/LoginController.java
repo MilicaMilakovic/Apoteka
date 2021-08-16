@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import net.etfbl.dao.ZaposleniDAO;
+import net.etfbl.mysql.ZaposleniDAO;
 
 import java.io.IOException;
 
@@ -45,6 +45,8 @@ public class LoginController {
         ZaposleniDAO zaposleniDAO = new ZaposleniDAO();
 
         if(zaposleniDAO.logIn(username,password)) {
+
+            MainPageController.zaposleni = zaposleniDAO.getByName(username);
             HomePageController.name=username;
             Stage primaryStage = new Stage();
             Parent root = null;

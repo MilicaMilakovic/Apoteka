@@ -1,5 +1,6 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
+import net.etfbl.dao.ZaposlenjeDAOInterface;
 import net.etfbl.dto.ZaposlenjeDTO;
 
 import java.sql.Connection;
@@ -7,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ZaposlenjeDAO {
+public class ZaposlenjeDAO implements ZaposlenjeDAOInterface {
 
     public ZaposlenjeDTO zaposlenje(int zaposleniID, int apotekaID) {
 

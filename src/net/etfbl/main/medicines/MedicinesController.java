@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import net.etfbl.dao.LijekDAO;
+import net.etfbl.mysql.LijekDAO;
 import net.etfbl.dto.LijekDTO;
 
 import java.io.IOException;

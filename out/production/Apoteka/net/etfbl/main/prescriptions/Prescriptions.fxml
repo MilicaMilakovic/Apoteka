@@ -23,19 +23,18 @@
             <Image url="@../../../../resources/Shiny%20Overlay%20(1).png" />
          </image>
       </ImageView>
-      <TableView fx:id="table" layoutX="97.0" layoutY="132.0" prefHeight="546.0" prefWidth="975.0">
+      <TableView fx:id="table" layoutX="94.0" layoutY="133.0" prefHeight="546.0" prefWidth="910.0">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="38.0" text="id" />
-            <TableColumn fx:id="imeCol" prefWidth="103.0" text="Ime" />
-            <TableColumn fx:id="prezimeCol" prefWidth="111.0" text="Prezime" />
-            <TableColumn fx:id="lijekCol" prefWidth="119.0" text="Lijek" />
-            <TableColumn fx:id="propisanaKolicinaCol" prefWidth="161.0" text="Propisana kolicina" />
-            <TableColumn fx:id="doktorCol" prefWidth="128.0" text="Doktor" />
-            <TableColumn fx:id="datumCol" prefWidth="196.0" text="Datum propisivanja lijeka" />
-            <TableColumn fx:id="cijenaCol" prefWidth="118.0" text="Cijena" />
+            <TableColumn fx:id="pacijentCol" prefWidth="141.0" text="Pacijent" />
+            <TableColumn fx:id="lijekCol" prefWidth="134.0" text="Lijek" />
+            <TableColumn fx:id="propisanaKolicinaCol" prefWidth="160.0" text="Propisana kolicina" />
+            <TableColumn fx:id="doktorCol" prefWidth="131.0" text="Doktor" />
+            <TableColumn fx:id="datumCol" prefWidth="185.0" text="Datum propisivanja lijeka" />
+            <TableColumn fx:id="cijenaCol" prefWidth="120.0" text="Cijena" />
          </columns>
       </TableView>
-      <Button graphicTextGap="10.0" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="IZDAJ LIJEK" textFill="WHITE">
+      <Button graphicTextGap="10.0" layoutX="28.0" layoutY="23.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-background-radius: 100;" text="IZDAJ LIJEK" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

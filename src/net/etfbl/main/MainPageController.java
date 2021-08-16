@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import net.etfbl.dto.ZaposleniDTO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +17,7 @@ public class MainPageController implements Initializable {
 
     @FXML
     public AnchorPane pane;
+    public static ZaposleniDTO zaposleni;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

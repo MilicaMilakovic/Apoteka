@@ -11,10 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import net.etfbl.dao.ApotekaDAO;
-import net.etfbl.dao.TelefonApotekeDAO;
-import net.etfbl.dao.ZaposleniDAO;
-import net.etfbl.dao.ZaposlenjeDAO;
+import net.etfbl.mysql.ZaposleniDAO;
 import net.etfbl.dto.ZaposleniDTO;
 
 import java.io.IOException;

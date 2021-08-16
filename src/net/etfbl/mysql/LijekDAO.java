@@ -1,14 +1,14 @@
-package net.etfbl.dao;
+package net.etfbl.mysql;
 
+import net.etfbl.dao.LijekDAOInterface;
 import net.etfbl.dto.LijekDTO;
 
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class LijekDAO {
+public class LijekDAO implements LijekDAOInterface {
 
 
     public LijekDTO lijek (int id){

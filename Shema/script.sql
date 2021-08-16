@@ -43,3 +43,10 @@ inner join zaposlenje on ZaposleniID=ZAPOSLENI_ZaposleniID
 inner join apoteka on ApotekaID=APOTEKA_ApotekaID;
 
 UPDATE `bp_apoteka`.`zaposlenje` SET `DatumDo` = '2022-10-10' WHERE (`ZAPOSLENI_ZaposleniID` = '2') and (`APOTEKA_ApotekaID` = '1');
+
+
+
+select * from izdavanje_lijeka;
+
+alter table izdavanje_lijeka drop column SifraIzdatogLijeka;
+
