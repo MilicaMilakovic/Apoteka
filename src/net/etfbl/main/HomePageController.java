@@ -3,9 +3,7 @@ package net.etfbl.main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import net.etfbl.mysql.LijekDAO;
-import net.etfbl.mysql.ReceptDAO;
-import net.etfbl.mysql.ZaposleniDAO;
+import net.etfbl.mysql.*;
 
 
 import java.net.URL;
@@ -22,6 +20,12 @@ public class HomePageController implements Initializable {
     public Label usersCount;
     @FXML
     public Label prescriptionCount;
+    @FXML
+    public Label doktorCount;
+    @FXML
+    public Label pacijentCount;
+    @FXML
+    public Label racunCount;
 
     public  static String name;
     @Override
@@ -33,6 +37,9 @@ public class HomePageController implements Initializable {
         medCount.setText(""+lijekDAO.count());
         usersCount.setText(""+zaposleniDAO.count());
         prescriptionCount.setText(""+receptDAO.count());
+        doktorCount.setText(""+(new DoktorDAO()).count());
+        pacijentCount.setText(""+(new PacijentDAO()).count());
+        racunCount.setText(""+(new FiskalniRacunDAO()).count());
 
         username.setText(name);
     }

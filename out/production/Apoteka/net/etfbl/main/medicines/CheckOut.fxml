@@ -52,7 +52,7 @@
             <DropShadow color="#000000a1" />
          </effect>
       </Rectangle>
-      <Label layoutX="363.0" layoutY="21.0" prefHeight="33.0" prefWidth="60.0" text="Račun">
+      <Label layoutX="363.0" layoutY="24.0" prefHeight="33.0" prefWidth="60.0" text="Račun">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -65,7 +65,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Line endX="123.0" layoutX="401.0" layoutY="63.0" startX="-122.0" strokeLineCap="ROUND" strokeWidth="0.5">
+      <Line endX="128.0" layoutX="399.0" layoutY="67.0" opacity="0.56" startX="-122.0" strokeLineCap="ROUND" strokeWidth="1.5">
          <stroke>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -76,19 +76,57 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <TextArea fx:id="stavkeText" layoutX="21.0" layoutY="38.0" prefHeight="248.0" prefWidth="222.0" />
-      <Label layoutX="21.0" layoutY="13.0" text="Stavke" textFill="WHITE" />
-      <TextField fx:id="idLijeka" layoutX="21.0" layoutY="300.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" />
-      <TextField fx:id="kolicina" layoutX="132.0" layoutY="300.0" prefHeight="25.0" prefWidth="98.0" promptText="kolicina" />
-      <Button layoutX="21.0" layoutY="334.0" mnemonicParsing="false" onAction="#izmijeni" text="Izmijeni" />
-      <Button layoutX="96.0" layoutY="427.0" mnemonicParsing="false" onAction="#zavrsi" text="Zavrsi" />
-      <TextField fx:id="obrisiID" layoutX="21.0" layoutY="373.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" />
-      <Button layoutX="132.0" layoutY="373.0" mnemonicParsing="false" onAction="#obrisi" text="Obrisi stavku" />
+      <TextArea fx:id="stavkeText" editable="false" layoutX="21.0" layoutY="38.0" prefHeight="248.0" prefWidth="222.0" />
+      <Label layoutX="21.0" layoutY="13.0" text="Stavke" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="idLijeka" layoutX="28.0" layoutY="295.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" style="-fx-background-radius: 3; -fx-border-color: #EEEDF0; -fx-border-radius: 3; -fx-border-width: 2; -fx-background-color: #ffffff;" />
+      <TextField fx:id="kolicina" layoutX="139.0" layoutY="295.0" prefHeight="25.0" prefWidth="98.0" promptText="kolicina" style="-fx-border-color: #EEEDF0; -fx-border-width: 2; -fx-border-radius: 3; -fx-background-radius: 3;" />
+      <Button layoutX="28.0" layoutY="329.0" mnemonicParsing="false" onAction="#izmijeni" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-width: 3; -fx-border-radius: 3;" text="Izmijeni" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow color="#000000cc" />
+         </effect></Button>
+      <Button layoutX="70.0" layoutY="422.0" mnemonicParsing="false" onAction="#zavrsi" prefHeight="37.0" prefWidth="137.0" style="-fx-background-radius: 100; -fx-background-color: #EEEDF0;" text="Završi">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#083467" />
+                  <Stop color="#407bff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <DropShadow color="#000000cd" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="obrisiID" layoutX="28.0" layoutY="372.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" style="-fx-background-radius: 3; -fx-border-color: #EEEDF0; -fx-border-radius: 3; -fx-border-width: 2;" />
+      <Button layoutX="139.0" layoutY="372.0" mnemonicParsing="false" onAction="#obrisi" prefHeight="31.0" prefWidth="98.0" style="-fx-border-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-width: 3; -fx-background-color: transparent; -fx-border-radius: 3;" text="Obriši stavku" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#000000cc" />
+         </effect>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Label fx:id="ukupno" layoutX="393.0" layoutY="473.0" text="Ukupno: ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="racunText" layoutX="273.0" layoutY="73.0" prefHeight="393.0" prefWidth="246.0" promptText="Racun" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+      <TextArea fx:id="racunText" editable="false" layoutX="272.0" layoutY="66.0" prefHeight="393.0" prefWidth="246.0" promptText="Racun" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
    </children>
 </AnchorPane>

@@ -125,6 +125,7 @@ public class CheckOutController implements Initializable {
         }
 
         ukupno.setText("Ukupno: " + (new FiskalniRacunDAO().getByID(racunID)).getCijenaUkupno()  + " KM" );
+        MedicinesController.refresh = true;
 
     }
 

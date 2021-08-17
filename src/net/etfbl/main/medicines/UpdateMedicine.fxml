@@ -17,7 +17,12 @@
    <children>
       <TextField fx:id="nazivField" layoutX="59.0" layoutY="67.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <TextField fx:id="kategorijaField" layoutX="265.0" layoutY="67.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="prodajnaCijenaField" layoutX="58.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="nabavnaCijenaField" layoutX="265.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <DatePicker fx:id="datumProizvodnjeField" layoutX="59.0" layoutY="177.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <DatePicker fx:id="rokUpotrebeField" layoutX="265.0" layoutY="177.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="kolicinaField" layoutX="59.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
+      <TextField fx:id="jacinaField" layoutX="265.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <Label layoutX="59.0" layoutY="50.0" text="Genericki naziv" textFill="#6f6f6f">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -28,8 +33,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="prodajnaCijenaField" layoutX="58.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
-      <TextField fx:id="nabavnaCijenaField" layoutX="265.0" layoutY="119.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <Label layoutX="58.0" layoutY="102.0" text="Prodajna cijena" textFill="#6f6f6f">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -41,7 +44,6 @@
          </font>
       </Label>
       <TextArea fx:id="opisField" layoutX="63.0" layoutY="291.0" prefHeight="103.0" prefWidth="183.0" />
-      <DatePicker fx:id="rokUpotrebeField" layoutX="265.0" layoutY="177.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <Label layoutX="58.0" layoutY="160.0" text="Datum proizvodnje" textFill="#6f6f6f">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -52,8 +54,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="kolicinaField" layoutX="59.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
-      <TextField fx:id="jacinaField" layoutX="265.0" layoutY="233.0" prefHeight="31.0" prefWidth="183.0" style="-fx-background-radius: 0;" />
       <Label layoutX="58.0" layoutY="216.0" text="Kolicina" textFill="#6f6f6f">
          <font>
             <Font name="System Bold" size="12.0" />

@@ -161,7 +161,7 @@ public class LijekDAO implements LijekDAOInterface {
                 + "DodatniOpis=?,"
                 + "FarmaceutskiOblik=?,"
                 + "JacinaLijeka=?"
-                + "IzdavanjeNaRecept=?"
+                //+ "IzdavanjeNaRecept=?"
                 + "WHERE LijekID=?";
 
         try{
@@ -178,8 +178,8 @@ public class LijekDAO implements LijekDAOInterface {
             ps.setString(9,lijek.getDodatniOpis());
             ps.setString(10,lijek.getFarmaceutskiOblik());
             ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getJacinaLijeka()));
-            ps.setBoolean(12,lijek.isIzdavanjeNaRecept());
-            ps.setInt(13, lijek.getLijekID());
+           // ps.setBoolean(12,lijek.isIzdavanjeNaRecept());
+            ps.setInt(12, lijek.getLijekID());
 
             retVal = ps.executeUpdate() == 1;
 

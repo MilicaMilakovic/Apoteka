@@ -60,74 +60,14 @@
                   <DropShadow color="#7682a3ec" spread="0.09" />
                </effect>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="445.0" layoutY="193.0" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/prescription.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="481.0" layoutY="195.0" text="Recepti">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
             <Label layoutX="483.0" layoutY="268.0" text="10" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="470.0" layoutY="230.0" text="10" textFill="#2b9044">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="445.0" layoutY="297.0" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/prescription.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="481.0" layoutY="301.0" text="Recepti">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="470.0" layoutY="345.0" text="10">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="191.0" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/pill.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="200.0" layoutY="194.0" prefHeight="25.0" prefWidth="65.0" text="Lijekovi">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="186.0" layoutY="230.0" text="10" textFill="#013b5f">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="158.0" layoutY="295.0" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/prescription.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="194.0" layoutY="299.0" text="Recepti">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="183.0" layoutY="343.0" text="10">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
-      <Rectangle fill="#f6f8fc" height="746.0" layoutX="-49.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="250.0">
+      <Rectangle fill="#f6f8fc" height="746.0" layoutX="-49.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="257.0">
          <effect>
             <DropShadow color="#070707" height="15.58" radius="7.1025" spread="0.22" width="14.83" />
          </effect>
@@ -140,49 +80,35 @@
             <DropShadow color="#7a87c98c" />
          </effect>
       </ImageView>
-      <Button graphicTextGap="20.0" layoutY="241.0" mnemonicParsing="false" onAction="#medicines" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Lijekovi">
+      <Button graphicTextGap="20.0" layoutY="275.0" mnemonicParsing="false" onAction="#medicines" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Lijekovi">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutY="284.0" mnemonicParsing="false" onAction="#prescriptions" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
+      <Button layoutY="318.0" mnemonicParsing="false" onAction="#prescriptions" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Recepti">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button graphicTextGap="20.0" layoutY="327.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Pacijenti" textAlignment="CENTER">
+      <Button graphicTextGap="20.0" layoutY="361.0" mnemonicParsing="false" onAction="#patients" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Pacijenti" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutY="368.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Doktori">
+      <Button layoutY="401.0" mnemonicParsing="false" onAction="#doctors" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Doktori">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutY="411.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Inventar">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font size="13.0" />
-         </font></Button>
-      <Button layoutY="454.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Dobavljači">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font size="13.0" />
-         </font></Button>
-      <Button defaultButton="true" graphicTextGap="20.0" layoutY="198.0" mnemonicParsing="false" onAction="#home" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Početna stranica">
+      <Button defaultButton="true" graphicTextGap="20.0" layoutY="232.0" mnemonicParsing="false" onAction="#home" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Početna stranica">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -190,13 +116,6 @@
                </image>
             </ImageView>
          </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font size="13.0" />
-         </font></Button>
-      <Button layoutY="497.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Proizvodjači">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -222,51 +141,36 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <Button layoutX="1.0" layoutY="541.0" mnemonicParsing="false" onAction="#users" prefHeight="43.0" prefWidth="201.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
+      <Button layoutY="444.0" mnemonicParsing="false" onAction="#users" prefHeight="43.0" prefWidth="208.0" style="-fx-background-color: transparent;" stylesheets="@../../../resources/button.css" text="Zaposleni">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font size="13.0" />
          </font></Button>
-      <ImageView fitHeight="25.0" fitWidth="200.0" layoutX="29.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+      <ImageView fitHeight="25.0" fitWidth="200.0" layoutX="29.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true" x="5.0">
          <image>
             <Image url="@../../../resources/medicine.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="35.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="35.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/prescription%20(1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="33.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="33.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/medical.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="32.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="32.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/doctor.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="34.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/truck.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="34.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="33.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/group.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="34.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/boxes.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="34.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../resources/information.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="23.0" fitWidth="200.0" layoutX="34.0" layoutY="649.0" pickOnBounds="true" preserveRatio="true">

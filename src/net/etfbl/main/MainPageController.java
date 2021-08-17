@@ -92,6 +92,31 @@ public class MainPageController implements Initializable {
         }
     }
 
+    public void patients(){
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("patients/Patients.fxml"));
+
+            pane.getChildren().removeAll();
+            pane.getChildren().setAll(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void doctors(){
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("doctors/Doctors.fxml"));
+
+            pane.getChildren().removeAll();
+            pane.getChildren().setAll(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void logOut(){
         System.exit(0);
     }

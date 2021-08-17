@@ -1,14 +1,14 @@
 use bp_apoteka;
 
+-- pogled - prikazivanje odabranih informacija o receptu
 drop view if exists recept_info;
 create view recept_info as
 select r.ReceptID, concat(r.Ime,' ', r.prezime) as Pacijent, l.GenerickiNaziv, r.PropisanaKolicina, concat( d.Ime,' ', d.Prezime) as Doktor, r.DatumPropisivanjaLijeka, l.ProdajnaCijena, l.LijekID, r.Vazeci
 from recept r natural join lijek l left outer join doktor d on d.DoktorID=r.DoktorID;
 
-select * from recept;
+-- select * from recept;
 
--- izdavanje lijeka na recept
-
+-- procedura koja generise i vraca novi racun
 drop procedure if exists generisi_racun;
 delimiter $$
 CREATE PROCEDURE `generisi_racun` ()
@@ -20,8 +20,7 @@ BEGIN
 END$$
 delimiter ;
 
-call generisi_racun;
-
+-- triger kojim se ponistava recept ukoliko je propisani lijek vec izdat
 drop trigger if exists ponisti_recept_trig;
 delimiter $$
 create trigger ponisi_recept_trig after insert on izdavanje_lijeka 
@@ -32,21 +31,47 @@ begin
 end $$
 delimiter ;
 
-drop trigger if exists izavanje_bez_recepta;
+-- procedura koja umanjuje dostupnu kolicinu lijeka za izdatu kolicinu tog lijeka 
+drop procedure if exists umanji_kolicinu_proc;
 delimiter $$
-create trigger izdavanje_bez_recepta before insert on izdavanje_lijeka
+CREATE PROCEDURE `umanji_kolicinu_proc` (in racID int)
+BEGIN
+	declare finished integer default 0;
+    declare id integer;
+    declare kol decimal(6,2);
+    declare staraKolicina decimal(6,2);
+    
+	declare kursor cursor for select LijekID, Kolicina from fiskalni_racun_stavka where RacunID=racID;
+    
+    declare continue handler for not found set finished = 1;
+    open kursor;
+    
+    umanji: LOOP 
+		fetch kursor into id, kol;
+        
+        if finished=1 then 
+			leave umanji;
+        end if;     
+        
+        set staraKolicina =(select Kolicina from lijek where LijekID=id);
+        update lijek set Kolicina=(staraKolicina-kol) where LijekID=id;
+        
+	end loop umanji;
+    close kursor;
+END$$
+delimiter ;
+
+-- triger koji poziva gorepomenutu proceduru u slucaju evidencije izdavanja lijeka
+drop trigger if exists umanji_kolicinu_trig;
+delimiter $$
+create trigger umanji_kolicinu_trig after insert on izdavanje_lijeka
 for each row
 begin
-	declare id int;
-    set id = (select ReceptID from new.izdavanje_lijeka);
-    if( id = 0) then
-    set new.ReceptID = null;
-    end if;
-end$$
-delimiter ; 
+	call umanji_kolicinu_proc(new.RacunID);
+end $$
+delimiter ;
 
-drop trigger izdavanje_bez_recepta;
-
+-- triger kojim se racuna ukupna cijena na racunu, na osnovu cijena pojedinacnih stakvi
 drop trigger if exists sracunaj_cijenu;
 delimiter $$
 create trigger sracunaj_cijenu after insert on fiskalni_racun_stavka 
@@ -60,8 +85,8 @@ delimiter ;
 
 
 select * from izdavanje_lijeka;
+select * from fiskalni_racun_stavka;
 SELECT * FROM fiskalni_racun;
 select * from recept;
 select * from recept_info;
-select * from fiskalni_racun_stavka;
 select * from lijek;

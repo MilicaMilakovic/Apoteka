@@ -1,5 +1,6 @@
 package net.etfbl.main.medicines;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -83,6 +84,7 @@ public class MedicinesController implements Initializable {
             while (true){
                 if(refresh){
                     getData();
+                    Platform.runLater(()->filter.setValue("Svi lijekovi"));
                     refresh = false;
                 }
                 try{
