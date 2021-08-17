@@ -1,6 +1,7 @@
 package net.etfbl.main.medicines;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -35,6 +36,8 @@ public class AddMedicineController {
     public TextArea kontraindikacijeField;
     @FXML
     public TextArea opisField;
+    @FXML
+    public CheckBox izdavanjeNaRecept;
 
 
     public void add(){
@@ -48,7 +51,8 @@ public class AddMedicineController {
                 Double.parseDouble(prodajnaCijenaField.getText()),Double.parseDouble(nabavnaCijenaField.getText()),
                 kontraindikacijeField.getText(), datumProizvodnje,
                 rokUpotrebe,Double.parseDouble(kolicinaField.getText()),
-                opisField.getText(),oblikField.getText(),Double.parseDouble(jacinaField.getText()));
+                opisField.getText(),oblikField.getText(),Double.parseDouble(jacinaField.getText()),
+                izdavanjeNaRecept.isSelected());
 
         LijekDAO lijekDAO = new LijekDAO();
         lijekDAO.dodajLijek(lijek);
@@ -69,6 +73,7 @@ public class AddMedicineController {
         oblikField.clear();
         kontraindikacijeField.clear();
         opisField.clear();
+        izdavanjeNaRecept.setSelected(false);
     }
 
 

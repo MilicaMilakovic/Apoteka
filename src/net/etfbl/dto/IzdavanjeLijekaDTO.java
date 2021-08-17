@@ -6,7 +6,7 @@ public class IzdavanjeLijekaDTO {
 
     private int zaposleniID;
     private int lijekID;
-    private int receptID;
+    private Integer receptID;
     private double kolicinaIzdatogLijeka;
     private String datumIzdavanja;
     private int racunID;
@@ -14,7 +14,7 @@ public class IzdavanjeLijekaDTO {
     public IzdavanjeLijekaDTO() {
     }
 
-    public IzdavanjeLijekaDTO( int zaposleniID, int lijekID, int receptID,
+    public IzdavanjeLijekaDTO( int zaposleniID, int lijekID, Integer receptID,
                               double kolicinaIzdatogLijeka, String datumIzdavanja, int racunID) {
 
         this.zaposleniID = zaposleniID;

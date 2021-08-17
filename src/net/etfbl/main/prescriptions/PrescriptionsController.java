@@ -68,7 +68,7 @@ public class PrescriptionsController implements Initializable {
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         new Thread(()->{
-            System.out.println("refresh thread");
+//            System.out.println("refresh thread");
             while (true){
                 if(refresh){
                     getData();

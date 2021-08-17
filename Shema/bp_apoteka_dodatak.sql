@@ -32,6 +32,21 @@ begin
 end $$
 delimiter ;
 
+drop trigger if exists izavanje_bez_recepta;
+delimiter $$
+create trigger izdavanje_bez_recepta before insert on izdavanje_lijeka
+for each row
+begin
+	declare id int;
+    set id = (select ReceptID from new.izdavanje_lijeka);
+    if( id = 0) then
+    set new.ReceptID = null;
+    end if;
+end$$
+delimiter ; 
+
+drop trigger izdavanje_bez_recepta;
+
 drop trigger if exists sracunaj_cijenu;
 delimiter $$
 create trigger sracunaj_cijenu after insert on fiskalni_racun_stavka 
@@ -49,3 +64,4 @@ SELECT * FROM fiskalni_racun;
 select * from recept;
 select * from recept_info;
 select * from fiskalni_racun_stavka;
+select * from lijek;

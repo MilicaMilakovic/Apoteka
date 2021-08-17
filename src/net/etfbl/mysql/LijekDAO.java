@@ -19,7 +19,8 @@ public class LijekDAO implements LijekDAOInterface {
         ResultSet rs = null;
 
         String query = "SELECT LijekID, GenerickiNaziv, Kategorija, ProdajnaCijena, NabavnaCijena" +
-                ", Kontraindikacije, DatumProizvodnje, RokUpotrebe, Kolicina, DodatniOpis,FarmaceutskiOblik, JacinaLijeka"
+                ", Kontraindikacije, DatumProizvodnje, RokUpotrebe, Kolicina, DodatniOpis,FarmaceutskiOblik," +
+                " JacinaLijeka, IzdavanjeNaRecept"
                 + " FROM lijek"
                 + " WHERE LijekID=?";
 
@@ -35,7 +36,8 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getBigDecimal(5).doubleValue(),rs.getString(6),
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
-                        rs.getString(11),rs.getBigDecimal(12).doubleValue());
+                        rs.getString(11),rs.getBigDecimal(12).doubleValue(),
+                        rs.getBoolean(13));
             }
 
         } catch (SQLException e) {
@@ -72,7 +74,8 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getBigDecimal(5).doubleValue(),rs.getString(6),
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
-                        rs.getString(11),rs.getBigDecimal(12).doubleValue()));
+                        rs.getString(11),rs.getBigDecimal(12).doubleValue(),
+                        rs.getBoolean(13)));
             }
 
         } catch (SQLException e) {
@@ -97,8 +100,8 @@ public class LijekDAO implements LijekDAOInterface {
         PreparedStatement ps = null;
 
         String query = "INSERT INTO lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije," +
-                "DatumProizvodnje,RokUpotrebe,Kolicina,DodatniOpis,FarmaceutskiOblik,JacinaLijeka) VALUES "+
-                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+                "DatumProizvodnje,RokUpotrebe,Kolicina,DodatniOpis,FarmaceutskiOblik,JacinaLijeka,IzdavanjeNaRecept) VALUES "+
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -117,6 +120,7 @@ public class LijekDAO implements LijekDAOInterface {
             ps.setString(9,lijek.getDodatniOpis());
             ps.setString(10,lijek.getFarmaceutskiOblik());
             ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getJacinaLijeka()));
+            ps.setBoolean(12,lijek.isIzdavanjeNaRecept());
 
             retVal = ps.executeUpdate() == 1;
 
@@ -157,6 +161,7 @@ public class LijekDAO implements LijekDAOInterface {
                 + "DodatniOpis=?,"
                 + "FarmaceutskiOblik=?,"
                 + "JacinaLijeka=?"
+                + "IzdavanjeNaRecept=?"
                 + "WHERE LijekID=?";
 
         try{
@@ -173,7 +178,8 @@ public class LijekDAO implements LijekDAOInterface {
             ps.setString(9,lijek.getDodatniOpis());
             ps.setString(10,lijek.getFarmaceutskiOblik());
             ps.setBigDecimal(11,BigDecimal.valueOf(lijek.getJacinaLijeka()));
-            ps.setInt(12, lijek.getLijekID());
+            ps.setBoolean(12,lijek.isIzdavanjeNaRecept());
+            ps.setInt(13, lijek.getLijekID());
 
             retVal = ps.executeUpdate() == 1;
 
@@ -258,7 +264,42 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getBigDecimal(5).doubleValue(),rs.getString(6),
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
-                        rs.getString(11),rs.getBigDecimal(12).doubleValue()));
+                        rs.getString(11),rs.getBigDecimal(12).doubleValue(),
+                        rs.getBoolean(13)));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return retVal;
+    }
+
+    public ArrayList<LijekDTO> lijekoviBezRecepta(){
+        ArrayList<LijekDTO> retVal = new ArrayList<>();
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String query = "SELECT * FROM lijek WHERE IzdavanjeNaRecept=0";
+
+        try{
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+
+            rs = ps.executeQuery();
+
+            while(rs.next()){
+                retVal.add( new LijekDTO(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getBigDecimal(4).doubleValue(),
+                        rs.getBigDecimal(5).doubleValue(),rs.getString(6),
+                        rs.getDate(7).toString(), rs.getDate(8).toString(),
+                        rs.getBigDecimal(9).doubleValue(), rs.getString(10),
+                        rs.getString(11),rs.getBigDecimal(12).doubleValue(),
+                        rs.getBoolean(13)));
             }
 
         } catch (SQLException e) {

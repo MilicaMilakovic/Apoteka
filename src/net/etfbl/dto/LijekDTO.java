@@ -16,8 +16,13 @@ public class LijekDTO {
     private String dodatniOpis;
     private String farmaceutskiOblik;
     private double jacinaLijeka;
+    private boolean izdavanjeNaRecept;
 
-    public LijekDTO(int lijekID, String generickiNaziv, String kategorija, double prodajnaCijena, double nabavnaCijena, String kontraindikacije, String datumProizvodnje, String rokUpotrebe, Double kolicina, String dodatniOpis, String farmaceutskiOblik, double jacinaLijeka) {
+
+    private String status;
+
+    public LijekDTO(int lijekID, String generickiNaziv, String kategorija, double prodajnaCijena, double nabavnaCijena, String kontraindikacije, String datumProizvodnje,
+                    String rokUpotrebe, Double kolicina, String dodatniOpis, String farmaceutskiOblik, double jacinaLijeka, boolean izdavanjeNaRecept) {
         this.lijekID = lijekID;
         this.generickiNaziv = generickiNaziv;
         this.kategorija = kategorija;
@@ -30,9 +35,30 @@ public class LijekDTO {
         this.dodatniOpis = dodatniOpis;
         this.farmaceutskiOblik = farmaceutskiOblik;
         this.jacinaLijeka = jacinaLijeka;
+        this.izdavanjeNaRecept = izdavanjeNaRecept;
+
+        status = izdavanjeNaRecept?"Da":"Ne";
     }
 
     public LijekDTO() {
+    }
+
+    public boolean isIzdavanjeNaRecept() {
+        return izdavanjeNaRecept;
+    }
+
+    public void setIzdavanjeNaRecept(boolean izdavanjeNaRecept) {
+        this.izdavanjeNaRecept = izdavanjeNaRecept;
+        status = izdavanjeNaRecept?"Da":"Ne";
+
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getLijekID() {

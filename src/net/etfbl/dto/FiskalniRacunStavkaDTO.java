@@ -1,5 +1,7 @@
 package net.etfbl.dto;
 
+import net.etfbl.mysql.LijekDAO;
+
 public class FiskalniRacunStavkaDTO {
 
     private int lijekID;
@@ -13,6 +15,7 @@ public class FiskalniRacunStavkaDTO {
         this.racunID = racunID;
         this.kolicina = kolicina;
         this.cijena = cijena;
+
     }
 
     public FiskalniRacunStavkaDTO() {
@@ -61,9 +64,9 @@ public class FiskalniRacunStavkaDTO {
     @Override
     public String toString() {
         return    "Naziv lijeka: " + nazivLijeka+
-                "\n LijekID: " + lijekID +
-                "\n RacunID: " + racunID +
-                "\n Kolicina: " + kolicina +
-                "\n Cijena: " + cijena ;
+                "\nLijekID: " + lijekID +
+                "\nRacunID: " + racunID +
+                "\nKolicina: " + kolicina +
+                "\nCijena: " + cijena ;
     }
 }

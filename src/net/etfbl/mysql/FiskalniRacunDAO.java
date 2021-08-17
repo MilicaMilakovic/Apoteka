@@ -39,4 +39,33 @@ public class FiskalniRacunDAO {
     public void izdajNaRecept(){
 
     }
+
+    public FiskalniRacunDTO getByID(int id){
+        FiskalniRacunDTO retVal = null;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String query = "SELECT * FROM fiskalni_racun where RacunID=?";
+
+        try{
+            conn = ConnectionPool.getInstance().checkOut();
+            ps = conn.prepareStatement(query);
+
+            ps.setInt(1,id);
+
+            rs = ps.executeQuery();
+
+            if(rs.next())
+                retVal = new FiskalniRacunDTO(rs.getInt(1),rs.getString(2),rs.getDouble(3));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().checkIn(conn);
+        }
+
+        return  retVal;
+    }
 }

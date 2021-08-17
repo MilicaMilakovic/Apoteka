@@ -25,7 +25,11 @@ public class IzdavanjeLijekaDAO implements IzdavanjeLijekaDAOInterface {
 
             ps.setInt(1, izdavanjeLijeka.getZaposleniID());
             ps.setInt(2,izdavanjeLijeka.getLijekID());
-            ps.setInt(3,izdavanjeLijeka.getReceptID());
+            if(izdavanjeLijeka.getReceptID()==0)
+//                ps.setNull(3,);
+                ps.setString(3, null);
+            else
+                ps.setInt(3,izdavanjeLijeka.getReceptID());
             ps.setBigDecimal(4, BigDecimal.valueOf(izdavanjeLijeka.getKolicinaIzdatogLijeka()));
             ps.setString(5,izdavanjeLijeka.getDatumIzdavanja());
             ps.setInt(6,izdavanjeLijeka.getRacunID());

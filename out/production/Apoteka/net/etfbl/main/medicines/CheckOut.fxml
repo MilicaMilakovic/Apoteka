@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="550.0" style="-fx-background-color: #F8F8F8;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.main.medicines.CheckOutController">
+   <children>
+      <ImageView fitHeight="608.0" fitWidth="558.0" layoutX="-3.0" layoutY="-9.0">
+         <image>
+            <Image url="@../../../../resources/Shiny%20Overlay.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="50.0" arcWidth="50.0" height="140.0" layoutX="-3.0" layoutY="473.0" stroke="#ffffff00" strokeType="INSIDE" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9);" width="558.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#053979" />
+                  <Stop color="#083467" offset="0.007662835249042145" />
+                  <Stop color="#d6e8f5" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+         <effect>
+            <DropShadow color="#000000c0" />
+         </effect>
+      </Rectangle>
+      <Button layoutX="393.0" layoutY="533.0" mnemonicParsing="false" onAction="#checkOut" prefHeight="37.0" prefWidth="137.0" style="-fx-background-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-color: linear-gradient(to left,#407BFF, #90CAF9); -fx-border-width: 2; -fx-border-radius: 100; -fx-background-radius: 100;" text="IZDAJ RACUN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow color="#000000b5" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="497.0" layoutX="255.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" width="279.0">
+         <effect>
+            <DropShadow color="#000000a1" />
+         </effect>
+      </Rectangle>
+      <Label layoutX="363.0" layoutY="21.0" prefHeight="33.0" prefWidth="60.0" text="Račun">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#013b5f" />
+                  <Stop color="#2b9044" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Line endX="123.0" layoutX="401.0" layoutY="63.0" startX="-122.0" strokeLineCap="ROUND" strokeWidth="0.5">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#053979" />
+                  <Stop color="#083467" offset="0.007662835249042145" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <TextArea fx:id="stavkeText" layoutX="21.0" layoutY="38.0" prefHeight="248.0" prefWidth="222.0" />
+      <Label layoutX="21.0" layoutY="13.0" text="Stavke" textFill="WHITE" />
+      <TextField fx:id="idLijeka" layoutX="21.0" layoutY="300.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" />
+      <TextField fx:id="kolicina" layoutX="132.0" layoutY="300.0" prefHeight="25.0" prefWidth="98.0" promptText="kolicina" />
+      <Button layoutX="21.0" layoutY="334.0" mnemonicParsing="false" onAction="#izmijeni" text="Izmijeni" />
+      <Button layoutX="96.0" layoutY="427.0" mnemonicParsing="false" onAction="#zavrsi" text="Zavrsi" />
+      <TextField fx:id="obrisiID" layoutX="21.0" layoutY="373.0" prefHeight="25.0" prefWidth="98.0" promptText="id lijeka" />
+      <Button layoutX="132.0" layoutY="373.0" mnemonicParsing="false" onAction="#obrisi" text="Obrisi stavku" />
+      <Label fx:id="ukupno" layoutX="393.0" layoutY="473.0" text="Ukupno: ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="racunText" layoutX="273.0" layoutY="73.0" prefHeight="393.0" prefWidth="246.0" promptText="Racun" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+   </children>
+</AnchorPane>

@@ -1,17 +1,17 @@
 package net.etfbl.main.medicines;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import net.etfbl.main.users.UpdateUserController;
 import net.etfbl.mysql.LijekDAO;
 import net.etfbl.dto.LijekDTO;
 
@@ -50,7 +50,12 @@ public class MedicinesController implements Initializable {
     public TableColumn<LijekDTO, Double> jacinaCol;
 
     @FXML
+    public ChoiceBox<String> filter;
+    @FXML
     public TextField searchField;
+    @FXML
+    public Button izdajBtn;
+
     public static boolean refresh;
 
     @Override
@@ -64,9 +69,15 @@ public class MedicinesController implements Initializable {
         datumProizvodnjeCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("datumProizvodnje"));
         rokUpotrebeCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("rokUpotrebe"));
         kolicinaCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,Double>("kolicina"));
-        dodatniOpisCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("dodatniOpis"));
+        dodatniOpisCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("status"));
         farmaceutskiOblikCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,String>("farmaceutskiOblik"));
         jacinaCol.setCellValueFactory(new PropertyValueFactory<LijekDTO,Double>("jacinaLijeka"));
+
+        filter.getItems().add("Izdavanje bez recepta");
+        filter.getItems().add("Svi lijekovi");
+
+        filter.setValue("Svi lijekovi");
+        filter.setOnAction(this::filterMeds);
 
         new Thread(()->{
             while (true){
@@ -140,5 +151,39 @@ public class MedicinesController implements Initializable {
         LijekDAO lijekDAO = new LijekDAO();
 
         table.setItems(FXCollections.observableArrayList(lijekDAO.pretragaPoNazivu(naziv)));
+    }
+
+    @FXML
+    private void filterMeds(ActionEvent event){
+        String res = filter.getValue();
+
+        if(res.equals("Svi lijekovi")){
+            refresh = true;
+            izdajBtn.setVisible(false);
+            table.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        }
+        else {
+            table.setItems(FXCollections.observableArrayList(new LijekDAO().lijekoviBezRecepta()));
+            izdajBtn.setVisible(true);
+            table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        }
+    }
+
+    public void checkOut(){
+        Stage primaryStage = new Stage();
+        Parent root = null;
+        CheckOutController.lijekovi = table.getSelectionModel().getSelectedItems();
+
+        try {
+            root = FXMLLoader.load(getClass().getResource("CheckOut.fxml"));
+            primaryStage.setTitle("Izdavanje racuna");
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/resources/logo.png")));
+
+            primaryStage.setScene(new Scene(root, 550  , 600));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
