@@ -1,5 +1,6 @@
 package net.etfbl.mysql;
 
+import net.etfbl.dao.FiskalniRacunDAOInterface;
 import net.etfbl.dto.FiskalniRacunDTO;
 
 import java.sql.Connection;
@@ -7,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class FiskalniRacunDAO {
+public class FiskalniRacunDAO implements FiskalniRacunDAOInterface {
 
     public FiskalniRacunDTO kreirajRacun(){
 
@@ -36,9 +37,6 @@ public class FiskalniRacunDAO {
         return retVal;
     }
 
-    public void izdajNaRecept(){
-
-    }
 
     public FiskalniRacunDTO getByID(int id){
         FiskalniRacunDTO retVal = null;

@@ -109,27 +109,17 @@
             <DropShadow color="#7682a3ec" spread="0.09" />
          </effect>
       </ImageView>
-      <Label layoutX="385.0" layoutY="305.0" text="Recepata">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
       <ButtonBar buttonMinWidth="60.0" layoutX="78.0" layoutY="304.0" prefHeight="25.0" prefWidth="95.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
          <buttons>
             <Label prefHeight="25.0" prefWidth="65.0" text="Lijekova" textFill="#3e4042">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/next.png" />
-               </image>
-            </ImageView>
          </buttons>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </ButtonBar>
       <Label fx:id="username" layoutX="1079.0" layoutY="74.0" text="milica" textFill="WHITE">
          <font>
@@ -247,14 +237,9 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/next.png" />
-               </image>
-            </ImageView>
          </buttons>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ButtonBar>
       <Circle fill="#f2f2f2" layoutX="495.0" layoutY="442.0" radius="27.0" stroke="#ffffffc4" strokeType="INSIDE" />
@@ -278,14 +263,9 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/next.png" />
-               </image>
-            </ImageView>
          </buttons>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ButtonBar>
       <Circle fill="#f2f2f2" layoutX="523.0" layoutY="415.0" radius="16.0" stroke="#ffffffc4" strokeType="INSIDE">
@@ -314,14 +294,9 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/next.png" />
-               </image>
-            </ImageView>
          </buttons>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ButtonBar>
       <Circle fill="#f2f2f2" layoutX="495.0" layoutY="572.0" radius="27.0" stroke="#ffffffc4" strokeType="INSIDE" />
@@ -345,14 +320,9 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="18.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../resources/next.png" />
-               </image>
-            </ImageView>
          </buttons>
          <cursor>
-            <Cursor fx:constant="HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ButtonBar>
       <Circle fill="#f2f2f2" layoutX="628.0" layoutY="657.0" radius="30.0" stroke="#ffffffc4" strokeType="INSIDE">
@@ -381,5 +351,17 @@
             </LinearGradient>
          </stroke>
       </Circle>
+      <ButtonBar buttonMinWidth="60.0" layoutX="371.0" layoutY="299.0" prefHeight="25.0" prefWidth="95.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <buttons>
+            <Label prefHeight="25.0" prefWidth="65.0" text="Recepata" textFill="#3e4042">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </buttons>
+      </ButtonBar>
    </children>
 </AnchorPane>

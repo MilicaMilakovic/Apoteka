@@ -1,5 +1,7 @@
 package net.etfbl.mysql;
 
+import net.etfbl.dao.FiskalniRacunDAOInterface;
+import net.etfbl.dao.FiskalniRacunStavkaDAOInterface;
 import net.etfbl.dto.FiskalniRacunDTO;
 import net.etfbl.dto.FiskalniRacunStavkaDTO;
 
@@ -10,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class FiskalniRacunStavkaDAO {
+public class FiskalniRacunStavkaDAO implements FiskalniRacunStavkaDAOInterface {
 
     public boolean dodajStavku(FiskalniRacunStavkaDTO stavka){
         boolean retVal = false;

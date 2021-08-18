@@ -55,7 +55,8 @@ public class PatientsController implements Initializable {
 
     @FXML
     void search(ActionEvent event) {
-
+        String name = searchField.getText();
+        table.setItems(FXCollections.observableArrayList((new PacijentDAO()).pretragaPoImenu(name)));
     }
 
     @Override

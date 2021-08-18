@@ -38,7 +38,7 @@
             <TableColumn fx:id="doktorIDCol" prefWidth="78.0" text="DoktorID" />
          </columns>
       </TableView>
-      <TextField fx:id="searchField" layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po nazivu" style="-fx-background-radius: 100;">
+      <TextField fx:id="searchField" layoutX="904.0" layoutY="31.0" prefHeight="37.0" prefWidth="200.0" promptText="  Pretraga po imenu" style="-fx-background-radius: 100;">
          <effect>
             <DropShadow color="#b0a4d066" />
          </effect>

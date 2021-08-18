@@ -6,10 +6,10 @@ insert into zaposleni (JMB,Ime,Prezime,KorisnickoIme,Lozinka,DatumRodjenja,Plata
 insert into zaposleni (JMB,Ime,Prezime,KorisnickoIme,Lozinka,DatumRodjenja,Plata) values ('1234567891011','Test','Test','test','test','1997-11-11',1000);
 select * from zaposleni;
 
-insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Ramipril 5mg','Antihipertenzivi',4.30, 3.12,'Pneumonija','2020-08-03','2022-08-03',5,'Tableta',5);
-insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Amoksicilin','Antibiotici',2.7, 1.9,'Alergija na peniciline','2020-09-07','2022-07-03',5,'Kapsula',500);
-insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Azitromicin','Antibiotici',7.7, 5.46,'Srcana insuficijencija','2021-05-07','2022-07-03',10,'Tableta',10);
-insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Pantoprazol','Inhibitori protonske pumpe',6.7, 4.75,'Bolesti jetre','2021-05-07','2022-07-03',10,'Tableta',20);
+insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka,IzdavanjeNaRecept) values ('Ramipril 5mg','Antihipertenzivi',4.30, 3.12,'Pneumonija','2020-08-03','2022-08-03',125,'Tableta',5,1);
+insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Amoksicilin','Antibiotici',2.7, 1.9,'Alergija na peniciline','2020-09-07','2022-07-03',215,'Kapsula',500);
+insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka) values ('Azitromicin','Antibiotici',7.7, 5.46,'Srcana insuficijencija','2021-05-07','2022-07-03',110,'Tableta',10);
+insert into lijek (GenerickiNaziv,Kategorija,ProdajnaCijena,NabavnaCijena,Kontraindikacije,DatumProizvodnje,RokUpotrebe,Kolicina,FarmaceutskiOblik,JacinaLijeka,IzdavanjeNaRecept) values ('Pantoprazol','Inhibitori protonske pumpe',6.7, 4.75,'Bolesti jetre','2021-05-07','2022-07-03',150,'Tableta',20,1);
 select * from lijek;
 
 insert into apoteka (Naziv,Adresa,Email) values ('B-pharm','Karadjordjeva 120','bpharm22@mail.com');
@@ -27,7 +27,7 @@ INSERT INTO `bp_apoteka`.`doktor` (`JMB`, `Ime`, `Prezime`, `SifraTima`, `Ambula
 select * from doktor;
 
 INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('1203999741522', 'Marko', 'Markovic', '1999-03-12', 'Karadjordjeva 5', 'D53', '1');
-INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('2109987457865', 'Pero', 'Peric', '1987-09-21', 'Ulica 5', 'D54', '1');
+INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('2109987451865', 'Pero', 'Peric', '1987-09-21', 'Ulica 5', 'D54', '1');
 INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('1503978254136', 'Jovo', 'Jovic', '1978-03-15', 'Ulica ', 'K78', '3');
 INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('0308983126116', 'Ana', 'Mirković', '1983-08-03', 'Ulica 3', 'M56', '7');
 INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('0512983100067', 'Slavko', 'Popović', '1983-12-05', 'Ulica 3', 'D21', '4');
@@ -38,13 +38,13 @@ INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `
 INSERT INTO `bp_apoteka`.`pacijent` (`JMB`, `Ime`, `Prezime`, `DatumRodjenja`, `Adresa`, `SifraBolesti`, `DoktorID`) VALUES ('1010988101124', 'Dejan', 'Babić', '1988-10-10', 'Ulica 5', 'P00', '6');
 
 select * from pacijent;
-INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `BrojZdravstvenogKartona`, `NazivZdravstveneUstanove`, `DatumPropisivanjaLijeka`, `LicniBrojOsiguranika`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Marko', 'Markovic', '3698521472', 'Ambulanta Laus', '2021-08-15', '1324','2', '1', '4', '3');
-INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `BrojZdravstvenogKartona`, `NazivZdravstveneUstanove`, `DatumPropisivanjaLijeka`, `LicniBrojOsiguranika`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Pero', 'Peric', '1234567890', 'Ambulanta Laus', '2021-08-15', '1234','3', '2', '1', '2');
-INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `DatumPropisivanjaLijeka`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Marko', 'Markovic', '2021-07-21','1', '1', '1', '3');
+INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `BrojZdravstvenogKartona`, `NazivZdravstveneUstanove`, `DatumPropisivanjaLijeka`, `LicniBrojOsiguranika`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Marko', 'Markovic', '3698521472', 'Ambulanta Laus', '2021-08-15', '1324','2', '1', '4', '1');
+INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `BrojZdravstvenogKartona`, `NazivZdravstveneUstanove`, `DatumPropisivanjaLijeka`, `LicniBrojOsiguranika`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Pero', 'Peric', '1234567890', 'Ambulanta Laus', '2021-08-15', '1234','3', '2', '1', '4');
+INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `DatumPropisivanjaLijeka`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Marko', 'Markovic', '2021-07-21','1', '1', '1', '1');
+INSERT INTO `bp_apoteka`.`recept` (`Ime`, `Prezime`, `DatumPropisivanjaLijeka`,`PropisanaKolicina`, `PacijentID`, `DoktorID`, `LijekID`) VALUES ('Mirjana', 'Gavric', '2021-08-17','2', '7', '5', '4');
 
-select * from recept;
-select * from recept r natural join lijek left outer join doktor d on d.DoktorID=r.DoktorID;
+-- select * from recept;
+-- select * from recept r natural join lijek left outer join doktor d on d.DoktorID=r.DoktorID;
 
--- INSERT INTO `bp_apoteka`.`izdavanje_lijeka` (`ZaposleniID`, `LijekID`, `ReceptID`, `KolicinaIzdatogLijeka`, `DatumIzdavanja`) VALUES ('1', '1', '1', '1', now());
-select * from izdavanje_lijeka;
-select * from fiskalni_racun;
+-- select * from izdavanje_lijeka;
+-- select * from fiskalni_racun;

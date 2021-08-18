@@ -17,7 +17,7 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
 
         String query = "SELECT EXISTS(SELECT JMB,Ime,Prezime,KorisnickoIme,Lozinka,DatumRodjenja,Plata "
                        + " from zaposleni"
-                       + " WHERE KorisnickoIme=? and Lozinka=?)";
+                       + " WHERE KorisnickoIme=? and Lozinka=? and Aktivan=1)";
 
         try{
             conn  = ConnectionPool.getInstance().checkOut();
@@ -49,7 +49,7 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM zaposleni";
+        String query = "SELECT * FROM zaposleni where Aktivan=1";
 
         try{
             conn= ConnectionPool.getInstance().checkOut();
@@ -109,7 +109,8 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "DELETE FROM zaposleni WHERE ZaposleniID=?";
+        String query = "UPDATE zaposleni SET Aktivan=0 WHERE ZaposleniID=?";
+//        String query = "DELETE FROM zaposleni WHERE ZaposleniID=?";
 
         try{
           conn = ConnectionPool.getInstance().checkOut();
@@ -172,7 +173,7 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM zaposleni WHERE Ime like " + "'%"+ime+"%'";
+        String query = "SELECT * FROM zaposleni WHERE Ime like " + "'%"+ime+"%' and Aktivan=1";
 
         try{
             conn=ConnectionPool.getInstance().checkOut();
@@ -203,7 +204,7 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT COUNT(*) FROM zaposleni";
+        String query = "SELECT COUNT(*) FROM zaposleni where Aktivan=1";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -228,7 +229,7 @@ public class ZaposleniDAO implements ZaposleniDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query=  "SELECT * FROM zaposleni WHERE KorisnickoIme=?";
+        String query=  "SELECT * FROM zaposleni WHERE KorisnickoIme=? and Aktivan=1";
 
         try
         {

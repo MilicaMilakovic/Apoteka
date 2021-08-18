@@ -45,7 +45,7 @@ public class DoctorController implements Initializable {
 
     @FXML
     void search(ActionEvent event) {
-
+        table.setItems(FXCollections.observableArrayList((new DoktorDAO()).pretragaPoImenu(searchField.getText())));
     }
 
     @Override

@@ -58,6 +58,7 @@ public class LoginController {
                 primaryStage.setTitle("Apoteka");
 
                 primaryStage.setScene(new Scene(root, 1370, 708));
+                primaryStage.setMaximized(true);
                 primaryStage.show();
 
                 Stage stage = (Stage) btn.getScene().getWindow();

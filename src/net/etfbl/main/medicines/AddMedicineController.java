@@ -52,7 +52,7 @@ public class AddMedicineController {
                 kontraindikacijeField.getText(), datumProizvodnje,
                 rokUpotrebe,Double.parseDouble(kolicinaField.getText()),
                 opisField.getText(),oblikField.getText(),Double.parseDouble(jacinaField.getText()),
-                izdavanjeNaRecept.isSelected());
+                izdavanjeNaRecept.isSelected(),true);
 
         LijekDAO lijekDAO = new LijekDAO();
         lijekDAO.dodajLijek(lijek);

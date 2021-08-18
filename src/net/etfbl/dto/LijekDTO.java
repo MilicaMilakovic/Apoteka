@@ -17,12 +17,13 @@ public class LijekDTO {
     private String farmaceutskiOblik;
     private double jacinaLijeka;
     private boolean izdavanjeNaRecept;
-
+    private boolean aktivan = true;
 
     private String status;
 
     public LijekDTO(int lijekID, String generickiNaziv, String kategorija, double prodajnaCijena, double nabavnaCijena, String kontraindikacije, String datumProizvodnje,
-                    String rokUpotrebe, Double kolicina, String dodatniOpis, String farmaceutskiOblik, double jacinaLijeka, boolean izdavanjeNaRecept) {
+                    String rokUpotrebe, Double kolicina, String dodatniOpis, String farmaceutskiOblik,
+                    double jacinaLijeka, boolean izdavanjeNaRecept, boolean aktivan) {
         this.lijekID = lijekID;
         this.generickiNaziv = generickiNaziv;
         this.kategorija = kategorija;
@@ -36,6 +37,7 @@ public class LijekDTO {
         this.farmaceutskiOblik = farmaceutskiOblik;
         this.jacinaLijeka = jacinaLijeka;
         this.izdavanjeNaRecept = izdavanjeNaRecept;
+        this.aktivan = aktivan;
 
         status = izdavanjeNaRecept?"Da":"Ne";
     }
@@ -155,6 +157,14 @@ public class LijekDTO {
 
     public void setJacinaLijeka(double jacinaLijeka) {
         this.jacinaLijeka = jacinaLijeka;
+    }
+
+    public boolean isAktivan() {
+        return aktivan;
+    }
+
+    public void setAktivan(boolean aktivan) {
+        this.aktivan = aktivan;
     }
 
     @Override

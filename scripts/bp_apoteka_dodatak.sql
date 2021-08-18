@@ -90,3 +90,6 @@ SELECT * FROM fiskalni_racun;
 select * from recept;
 select * from recept_info;
 select * from lijek;
+select * from doktor;
+select * from zaposleni;
+select * from pacijent;

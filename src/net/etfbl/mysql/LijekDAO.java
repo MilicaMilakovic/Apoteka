@@ -20,7 +20,7 @@ public class LijekDAO implements LijekDAOInterface {
 
         String query = "SELECT LijekID, GenerickiNaziv, Kategorija, ProdajnaCijena, NabavnaCijena" +
                 ", Kontraindikacije, DatumProizvodnje, RokUpotrebe, Kolicina, DodatniOpis,FarmaceutskiOblik," +
-                " JacinaLijeka, IzdavanjeNaRecept"
+                " JacinaLijeka, IzdavanjeNaRecept, Aktivan"
                 + " FROM lijek"
                 + " WHERE LijekID=?";
 
@@ -37,7 +37,7 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
                         rs.getString(11),rs.getBigDecimal(12).doubleValue(),
-                        rs.getBoolean(13));
+                        rs.getBoolean(13), rs.getBoolean(14));
             }
 
         } catch (SQLException e) {
@@ -57,7 +57,7 @@ public class LijekDAO implements LijekDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM lijek";
+        String query = "SELECT * FROM lijek where Aktivan=1";
 
         try{
 //            conn = ConnectionPool.getInstance().checkOut();
@@ -75,7 +75,7 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
                         rs.getString(11),rs.getBigDecimal(12).doubleValue(),
-                        rs.getBoolean(13)));
+                        rs.getBoolean(13),rs.getBoolean(14)));
             }
 
         } catch (SQLException e) {
@@ -198,9 +198,10 @@ public class LijekDAO implements LijekDAOInterface {
         Connection conn = null;
         PreparedStatement ps = null;
 
-        String query = "DELETE FROM lijek " +
-                "WHERE LijekID=? ";
+        String query = "UPDATE lijek SET Aktivan=0 WHERE LijekID=?";
 
+        //String query = "DELETE FROM lijek " +
+          //      "WHERE LijekID=? ";
         try {
             conn = ConnectionPool.getInstance().checkOut();
             ps = conn.prepareStatement(query);
@@ -225,7 +226,7 @@ public class LijekDAO implements LijekDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT COUNT(*) FROM lijek";
+        String query = "SELECT COUNT(*) FROM lijek where Aktivan=1";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -250,11 +251,12 @@ public class LijekDAO implements LijekDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM lijek WHERE GenerickiNaziv like " + "'%"+naziv+"%'";
+        String query = "SELECT * FROM lijek WHERE GenerickiNaziv LIKE " +"'%"+naziv+"%'"+" and Aktivan=1";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
             ps = conn.prepareStatement(query);
+
 
             rs = ps.executeQuery();
 
@@ -265,7 +267,7 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
                         rs.getString(11),rs.getBigDecimal(12).doubleValue(),
-                        rs.getBoolean(13)));
+                        rs.getBoolean(13),rs.getBoolean(14)));
             }
 
         } catch (SQLException e) {
@@ -284,7 +286,7 @@ public class LijekDAO implements LijekDAOInterface {
         PreparedStatement ps = null;
         ResultSet rs = null;
 
-        String query = "SELECT * FROM lijek WHERE IzdavanjeNaRecept=0";
+        String query = "SELECT * FROM lijek WHERE IzdavanjeNaRecept=0 and Aktivan=1";
 
         try{
             conn = ConnectionPool.getInstance().checkOut();
@@ -299,7 +301,7 @@ public class LijekDAO implements LijekDAOInterface {
                         rs.getDate(7).toString(), rs.getDate(8).toString(),
                         rs.getBigDecimal(9).doubleValue(), rs.getString(10),
                         rs.getString(11),rs.getBigDecimal(12).doubleValue(),
-                        rs.getBoolean(13)));
+                        rs.getBoolean(13),rs.getBoolean(14)));
             }
 
         } catch (SQLException e) {

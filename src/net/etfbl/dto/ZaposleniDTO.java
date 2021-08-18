@@ -13,6 +13,8 @@ public class ZaposleniDTO {
     private String datumRodjenja;
     private double plata;
 
+    private boolean aktivan = true;
+
     public ZaposleniDTO(int id,String JMB, String ime, String prezime, String korisnickoIme, String lozinka, String datumRodjenja, double plata) {
         this.id = id;
         this.JMB = JMB;
@@ -22,6 +24,14 @@ public class ZaposleniDTO {
         this.lozinka = lozinka;
         this.datumRodjenja = datumRodjenja;
         this.plata = plata;
+    }
+
+    public boolean isAktivan() {
+        return aktivan;
+    }
+
+    public void setAktivan(boolean aktivan) {
+        this.aktivan = aktivan;
     }
 
     public ZaposleniDTO() {
